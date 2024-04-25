@@ -3,39 +3,99 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-
+    <title>BODH | Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/aos.css" rel="stylesheet" />
+    <link href="~/Content/css/nav.css" rel="stylesheet" />
+    <link href="~/Content/css/initcarousel-1.css" rel="stylesheet" />
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="~/Content/js/initcarousel-1.js"></script>
+    <script src="~/Content/js/amazingcarousel.js"></script>
+    <style>
+        .loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99999;
+            background: #fff;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-        <div class="container">
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                </ul>
-                 @Html.Partial("_LoginPartial")
-            </div>
+    <div class="loader">
+        <div id="zoom-box">
+            <img src="~/Content/images/main-logo.png" id="myImage">
         </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
+    @Html.Partial("_Header")
+    @RenderBody()
+    @Html.Partial("_Footer")
+
+    @*@Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @RenderSection("scripts", required: false)*@
+    <script id="rendered-js">
+        (function ($) {
+            $(function () {
+                $('#navbar-toggle').click(function () {
+                    $('nav ul').slideToggle();
+                });
+                $('#navbar-toggle').on('click', function () {
+                    this.classList.toggle('active');
+                });
+                $('nav ul li a:not(:only-child)').click(function (e) {
+                    $(this).siblings('.navbar-dropdown').slideToggle("slow");
+                    $('.navbar-dropdown').not($(this).siblings()).hide("slow");
+                    e.stopPropagation();
+                });
+                $('html').click(function () {
+                    $('.navbar-dropdown').hide();
+                });
+            });
+        })(jQuery);
+    </script>
+    <script src="~/Content/js/aos.js"></script>
+    <script>
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 1000
+        });
+    </script>
+    <script>
+        window.addEventListener('load', function () {
+            $('.loader').fadeIn(2000);
+            $('#zoom-box').animate({
+                width: '300px',
+                height: '300px',
+                top: '0',
+                left: '0',
+            }, 500);
+        });
+
+        function fadeout() {
+            $('#zoom-box').animate({
+                width: '10px',
+                height: '10px',
+                top: '0',
+                left: '0',
+            }, 500);
+            $('.loader').fadeOut(1000);
+            $('.loader').addClass('hidden');
+        }
+
+        setInterval(fadeout, 2000);
+    </script>
 </body>
 </html>
