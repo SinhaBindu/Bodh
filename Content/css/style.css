@@ -157,7 +157,7 @@ header,
 }
 .method-section {
   margin-top: 20px;
-  padding: 30px 0px 0;
+  padding: 50px 0px 0;
   background: #fffdfd;
   text-align: center;
 }
@@ -167,17 +167,25 @@ header,
   margin-top: 10px;
 }
 .methodology {
-  background: url(../images/method-bg.png) bottom center no-repeat;
+  /*background: url(../images/method-bg.png) bottom center no-repeat;
   background-size: cover;
-  width: 100%;
-  padding: 140px 0 60px;
+  width: 100%;*/
+  padding: 40px 0 60px;
 }
 .methodology h3 {
   text-transform: uppercase;
   font-weight: 500;
   font-size: 20px;
   color: #222222;
+  margin-top: 10px
 }
+    .methodology h4 {
+        font-weight: 400;
+        font-size: 14px;
+        color: #CDCFD3;
+        margin-bottom: 0px;
+        letter-spacing: 1px
+    }
 .methodology p {
   color: #8f8d8c;
   font-size: 15px;
@@ -194,15 +202,15 @@ header,
 .method-box {
   flex: 1;
 }
-.box-arrange1,
+/*.box-arrange1,
 .box-arrange3 {
   margin-top: -160px;
-}
-.box-arrange2,
+}*/
+/*.box-arrange2,
 .box-arrange3,
 .box-arrange4 {
   margin-left: -60px;
-}
+}*/
 .method-box span img {
   display: block;
   margin: auto;
@@ -246,9 +254,29 @@ header,
 .bgr4 {
   background: #b5856e;
 }
+
+.process-design {
+    margin: auto;
+    max-width: 1112px;
+    display: flex;
+    align-items: center;
+}
+.process-mar-top {
+    margin-top: 56px
+}
+.process-img {
+    width: 300px
+}
+.process-arrow {
+    width: 130px;
+    margin-left: -12px
+}
+.process-mar-left {
+    margin-left: -12px
+}
 .recent-blog {
-  padding: 40px 0 50px;
-  background: #fbfbfb;
+    padding: 40px 0 50px;
+    background: #fbfbfb;
 }
 
 .blog {
@@ -446,7 +474,8 @@ header,
   font-size: 15px;
 }
 .foot {
-  flex: 1;
+    width: 320px;
+    margin: auto
 }
 .foot i {
   float: left;

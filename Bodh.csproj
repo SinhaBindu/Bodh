@@ -203,6 +203,7 @@
     <Content Include="Content\css\style.css" />
     <Content Include="Content\images\adolescent.png" />
     <Content Include="Content\images\adult.png" />
+    <Content Include="Content\images\arrow.png" />
     <Content Include="Content\images\arrows-32-32-3.png" />
     <Content Include="Content\images\banner-image.png" />
     <Content Include="Content\images\blog1.png" />
@@ -226,7 +227,10 @@
     <Content Include="Content\images\icon.png" />
     <Content Include="Content\images\main-logo.png" />
     <Content Include="Content\images\method-bg.png" />
+    <Content Include="Content\images\Middle.png" />
+    <Content Include="Content\images\original-left.png" />
     <Content Include="Content\images\react.svg" />
+    <Content Include="Content\images\right.png" />
     <Content Include="Content\images\test.png" />
     <Content Include="Content\images\work-area.png" />
     <Content Include="Content\js\amazingcarousel.js" />
