@@ -167,10 +167,10 @@ header,
   margin-top: 10px;
 }
 .methodology {
-  /*background: url(../images/method-bg.png) bottom center no-repeat;
+  background: url(../images/method-bg.png) bottom center no-repeat;
   background-size: cover;
-  width: 100%;*/
-  padding: 40px 0 60px;
+  width: 100%;
+  padding: 140px 0 60px;
 }
 .methodology h3 {
   text-transform: uppercase;
@@ -182,7 +182,7 @@ header,
     .methodology h4 {
         font-weight: 400;
         font-size: 14px;
-        color: #CDCFD3;
+        color: #AA666B;
         margin-bottom: 0px;
         letter-spacing: 1px
     }
@@ -202,10 +202,10 @@ header,
 .method-box {
   flex: 1;
 }
-/*.box-arrange1,
+.box-arrange1,
 .box-arrange3 {
-  margin-top: -160px;
-}*/
+  margin-top: -70px;
+}
 /*.box-arrange2,
 .box-arrange3,
 .box-arrange4 {
@@ -260,6 +260,7 @@ header,
     max-width: 1112px;
     display: flex;
     align-items: center;
+    padding-bottom: 80px
 }
 .process-mar-top {
     margin-top: 56px
