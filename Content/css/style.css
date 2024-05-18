@@ -795,3 +795,68 @@ header,
 .content-img {
     border-radius: 10px;
 }
+.download-paper {
+    padding: 40px 0;
+    margin: auto;
+    max-width: 1024px;
+}
+.download-paper h2 {
+    font-size: 50px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.download-list {
+    display: flex;
+    /*gap: 3%;*/
+    flex-wrap: wrap;
+}
+.downloads {
+    margin: 0 1.5%;
+    flex-basis: 30%;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    margin-top: 20px;
+    padding-bottom: 30px
+}
+    .downloads h3 {
+        background: #E8E8E8;
+        margin: 0px 0 20px;
+        padding: 20px 15px;
+        border-radius: 7px 7px 0 0;
+        color: #515151;
+        font-weight: 500
+    }
+    .downloads p {
+        margin-left: 20px;
+        color: #999999;
+        font-size: 14px
+    }
+    .downloads a {
+        display: block;
+        width: 130px;
+        padding: 7px 0;
+        margin: auto;
+        border: 1px solid #F36131;
+        text-align: center;
+        border-radius: 7px;
+        color: #F36131;
+        margin-top: 30px
+    }
+        .downloads a:hover {
+            background: #F36131;
+            color: #fff;
+        }
+.pdf-icon {
+    font-size: 30px;
+    color: #E64040;
+    float: left;
+    margin-right: 20px
+}
+.word-icon {
+    font-size: 30px;
+    color: #4A89F0;
+    float: left;
+    margin-right: 20px
+}
