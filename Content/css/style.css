@@ -204,7 +204,7 @@ header,
 }
 .box-arrange1,
 .box-arrange3 {
-  margin-top: -70px;
+  margin-top: -100px;
 }
 /*.box-arrange2,
 .box-arrange3,
@@ -214,8 +214,8 @@ header,
 .method-box span img {
   display: block;
   margin: auto;
-  width: 80px;
-  padding: 22px 0 0 0px;
+  width: 110px;
+  padding: 0px 0 0 0px;
 }
 .bgr1,
 .bgr2,
