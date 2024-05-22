@@ -167,10 +167,12 @@ header,
   margin-top: 10px;
 }
 .methodology {
-  background: url(../images/method-bg.png) bottom center no-repeat;
-  background-size: cover;
-  width: 100%;
-  padding: 140px 0 60px;
+    background: url(../images/method-bg.png) bottom center no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 140px 0 60px;
+    height: 320px;
+    margin-top: 50px
 }
 .methodology h3 {
   text-transform: uppercase;
@@ -194,7 +196,7 @@ header,
 }
 .method-content {
   margin: auto;
-  max-width: 1200px;
+  max-width: 1000px;
   display: flex;
   gap: 50px;
 }
@@ -202,15 +204,17 @@ header,
 .method-box {
   flex: 1;
 }
-.box-arrange1,
-.box-arrange3 {
-  margin-top: -100px;
+.box-arrange1 {
+  margin-top: -180px;
 }
-/*.box-arrange2,
-.box-arrange3,
-.box-arrange4 {
-  margin-left: -60px;
-}*/
+.box-arrange2 {
+  /*margin-left: 60px;*/
+  margin-top: -30px
+}
+.box-arrange3 {
+    /*margin-left: -70px;*/
+    margin-top: -30px
+}
 .method-box span img {
   display: block;
   margin: auto;
