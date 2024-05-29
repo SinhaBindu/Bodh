@@ -439,14 +439,17 @@
     <Content Include="Content\images\define.png" />
     <Content Include="Content\images\design.png" />
     <Content Include="Content\images\diagnose.png" />
+    <Content Include="Content\images\email.png" />
     <Content Include="Content\images\healthy.png" />
     <Content Include="Content\images\icon.png" />
+    <Content Include="Content\images\location.png" />
     <Content Include="Content\images\main-logo.png" />
     <Content Include="Content\images\method-bg.png" />
     <Content Include="Content\images\Middle.png" />
     <Content Include="Content\images\original-left.png" />
     <Content Include="Content\images\react.svg" />
     <Content Include="Content\images\right.png" />
+    <Content Include="Content\images\telephone.png" />
     <Content Include="Content\images\test.png" />
     <Content Include="Content\images\work-area.png" />
     <Content Include="Content\js\amazingcarousel.js" />

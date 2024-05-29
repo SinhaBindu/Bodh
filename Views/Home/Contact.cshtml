@@ -1,272 +1,67 @@
-﻿@{
-    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
-}
+﻿<div class="contact-page-title">
+    <h2>Contact Us</h2>
+</div>
 
-<div class="content-body rightside-event">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="xl:w-full">
-                <div class="rounded-[0.5rem] bg-[#fff9c7] dark:bg-[#1b1b1b] lg:pr-[340px] pl-12 lg:pt-12 pb-[1.5rem] mb-6 relative mt-4 pr-[120px] pt-[30px] max-lg:pl-[30px] max-sm:p-5 max-sm:mb-5">
-                    <h4 class="text-[#ff7a01] text-lg font-semibold mb-2">Welcome to Tixia!</h4>
-                    <p class="mb-4">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dumm.
+<div class="contact-details">
+    <div class="manage-content">
+        <div class="enquiry-form">
+            <h4>Get in Touch</h4>
+            <h3>Let's Chat, Reach Out to Us</h3>
+            <p>Have question or feedback? We're here to help. Send us a message, and we'll respond back</p>
+            <hr />
+            <div class="input-form2">
+                <div class="input-form-devide">
+                    <p>First Name</p>
+                    <input type="text" placeholder="First Name" />
+                </div>
+                <div class="input-form-devide">
+                    <p>Last Name</p>
+                    <input type="text" placeholder="Last Name" />
+                </div>
+            </div>
+            <div class="input-form">
+                <div class="input-form-devide">
+                    <p>Mobile Number</p>
+                    <input type="text" placeholder="Mobile Number" />
+                </div>
+            </div>
+            <div class="input-form">
+                <div class="input-form-devide">
+                    <p>Email Address</p>
+                    <input type="text" placeholder="Email Address" />
+                </div>
+            </div>
+            <div class="input-form">
+                <div class="input-form-devide">
+                    <p>Your Message</p>
+                    <textarea placeholder="Your Message"></textarea>
+                </div>
+            </div>
+            <button class="submit-btn">Submit</button>
+        </div>
+        <div class="address-details">
+            <div class="location-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.6313416746993!2d77.26829907486035!3d28.550798687788728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce22f88f0b40b%3A0x737d128e6ef5afaf!2sProject%20Concern%20International!5e0!3m2!1sen!2sin!4v1716985233461!5m2!1sen!2sin" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="location-details">
+                <div class="cont-box">
+                    <img src="~/Content/images/location.png" class="cont-icon" alt="Address Icon" />
+                    <p>
+                        Plot no F-87, Okhla Phase III,
+                        New Delhi - 110020
                     </p>
-                    <a class="rounded-full bg-[#ff7a01] text-white py-[0.65rem] px-[1.25rem] mt-1 inline-block"
-                       href="javascript:void(0);">
-                        Learn More <i class="las la-long-arrow-alt-right ms-sm-4 ms-2"></i>
-                    </a>
-                    <a class="text-[0.875rem] ml-4" href="javascript:void(0);">Remind Me Later</a>
-                    <img src="~/Content/assets/images/svg/welcom-card.svg" alt=""
-                         class="absolute right-[34px] top-[-34px]  bottom-5 max-lg:w-[120px] max-lg:bottom-5 max-lg:top-auto max-lg:right-5 max-sm:hidden">
                 </div>
-            </div>
-            <div class="xl:w-full">
-                <div class="card" id="user-activity">
-                    <div class="card-header sm:px-[1.875rem] px-4 pt-[1.5rem] justify-between items-center sm:flex block">
-                        <h4 class="card-title max-sm:mb-2">Sales Revenue</h4>
-                        <ul class=" nav nav-tabs sm-w-[85%]  flex flex-wrap bg-[#f4f4f4] dark:bg-[#151515] rounded-full  dz-tab-area"
-                            id="pills-tab" role="tablist">
-                            <li class="sm:flex-1 nav-item" role="presentation">
-                                <button class="nav-link  rounded-full py-[10px] px-5 font-medium text-sm border-0 tab-btn  dark:text-white"
-                                        data-tab="tab-Month" data-series="month"
-                                        id="pills-month-tab">
-                                    Monthly
-                                </button>
-                            </li>
-                            <li class="nav-item sm:flex-1" role="presentation">
-                                <button class="nav-link  rounded-full py-[10px] px-5 font-medium text-sm border-0 tab-btn  dark:text-white active "
-                                        data-tab="tab-Week" data-series="week" id="pills-week-tab">
-                                    Weekly
-                                </button>
-                            </li>
-                            <li class="nav-item sm:flex-1" role="presentation">
-                                <button class="nav-link rounded-full py-[10px] px-5 font-medium text-sm border-0 tab-btn  dark:text-white"
-                                        data-tab="tab-Year" data-series="year" id="pills-year-tab">
-                                    Today
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="activityLine" class="chartjs chartjs-render-monitor" height="350"
-                                style="display: block; width: 1041px; height: 350px;" width="1041"></canvas>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade active show" id="user" role="tabpanel">
-                                <div class="chartjs-size-monitor">
-                                    <div class="chartjs-size-monitor-expand">
-                                        <div class=""></div>
-                                    </div>
-                                    <div class="chartjs-size-monitor-shrink">
-                                        <div class=""></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+                <div class="cont-box">
+                    <img src="~/Content/images/telephone.png" class="cont-icon" alt="Telephone Icon" />
+                    <p>
+                        011-46058888
+                    </p>
                 </div>
-            </div>
-            <div class="lg:w-1/2">
-                <div class="card">
-                    <div class="card-header sm:px-[1.875rem] px-4 pt-[1.5rem] pb-4 flex justify-between items-center flex-wrap">
-                        <h4 class="card-title max-sm:mb-2">Latest Sales</h4>
-                        <div class="flex">
-                            <div class="default-select mr-4">
-                                <select class="nice-select ">
-                                    <option value="Today">Weekly</option>
-                                    <option value="Week">Daily</option>
-                                    <option value="Month">Monthly</option>
-                                </select>
-                            </div>
-                            <div class="default-select">
-                                <select class="nice-select ">
-                                    <option value="Today">2024</option>
-                                    <option value="Week">2023</option>
-                                    <option value="Month">2022</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body p-[1.875rem]">
-                        <div class="row items-center">
-                            <div class="sm:w-[66.66%] md:w-[58.33%] text-center sm:mb-0 mb-3">
-                                <div id="chart" class="inline-block"></div>
-                            </div>
-                            <div class="sm:w-1/3 md:w-[41.66%]">
-                                <div class="chart-deta">
-                                    <div class="col px-0 flex p-0 mr-[15px] mb-[5px] sm:mb-[45px]">
-                                        <span class="bg-warning h-4 w-4 rounded-[0.875rem] sm:w-[38px] sm:h-[38px]"></span>
-                                        <div class="mx-4 max-sm:flex items-center">
-                                            <p class="text-[14px] font-medium">Ticket Left</p>
-                                            <h3 class="text-sm sm:text-[22px] sm:inline-block  text-black dark:text-white font-semibold">
-                                                21,512
-                                            </h3>
-                                        </div>
-                                    </div>
-                                    <div class="col px-0 flex p-0 mr-[15px]  mb-[5px] sm:mb-[45px]">
-                                        <span class="bg-primary h-4 w-4 rounded-[0.875rem] sm:w-[38px] sm:h-[38px]"></span>
-                                        <div class="mx-3 max-sm:flex items-center">
-                                            <p class="text-[14px] font-medium">Ticket Sold</p>
-                                            <h3 class="text-sm sm:text-[22px] sm:inline-block  text-black dark:text-white font-semibold">
-                                                456,72
-                                            </h3>
-                                        </div>
-                                    </div>
-                                    <div class="col px-0 flex p-0 mr-[15px]  mb-[5px] sm:mb-[45px]">
-                                        <span class="bg-success h-4 w-4 rounded-[0.875rem] sm:w-[38px] sm:h-[38px]"></span>
-                                        <div class="mx-3 max-sm:flex items-center">
-                                            <p class="text-[14px] font-medium">Event Held</p>
-                                            <h3 class="text-sm sm:text-[22px] sm:inline-block  text-black dark:text-white font-semibold">
-                                                235
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="lg:w-1/2">
-                <div class="card">
-                    <div class="card-header sm:px-[1.875rem] px-4 pt-[1.5rem] pb-0 flex justify-between items-center">
-                        <h4 class="card-title">Latest Sales</h4>
-                        <div class="dropdown custom-dropdown inline-block mb-4">
-                            <div class="btn min-w-[2.4rem] p-[0.4375rem] h-[2.4rem] leading-[1.7] min-h-[2.5rem] btn-primary tp-btn ml-4 hover:bg-primary rounded-md dz-dropdown"
-                                 data-dz-dropdown="dropdown-22">
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                     xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
-                                     viewBox="0 0 24 24" version="1.1">
-                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <rect x="0" y="0" width="24" height="24"></rect>
-                                        <circle fill="#000000" cx="12" cy="5" r="2"></circle>
-                                        <circle fill="#000000" cx="12" cy="12" r="2"></circle>
-                                        <circle fill="#000000" cx="12" cy="19" r="2"></circle>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="dropdown-menu dropdown-menu-end">
-                            </div>
-                            <div class="dz-dropdown-menu absolute translate-x-[-70px] translate-y-[10px] overflow-hidden rounded-md z-[9] bg-white dark:bg-[#1b1b1b] shadow-[0_0_3.125rem_0_rgba(82,63,105,0.15)] min-w-[9rem] text-left py-2 hidden"
-                                 id="dropdown-22">
-                                <a class="dropdown-item py-2 px-5 text-body-color text-[13px] text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:bg-transparent dark:text-white"
-                                   href="javascript:void(0);">View Detail</a>
-                                <a class="dropdown-item py-2 px-5 text-body-color text-[13px] text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:bg-transparent dark:text-white"
-                                   href="javascript:void(0);">Edit</a>
-                                <a class="dropdown-item py-2 px-5 text-body-color text-[13px] text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:bg-transparent dark:text-white"
-                                   href="javascript:void(0);">Delete</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body p-[1.875rem] h-[370px] relative overflow-y-scroll pb-2 loadmore-conten"
-                         id="RecentActivityContent">
-                        <div class="flex border-b border-[#eaeaea] dark:border-[#3b3f45]  pb-[15px] mb-[15px] items-end">
-                            <div class="mr-4 w-[50px] h-[50px] bg-[#eee] rounded-full overflow-hidden text-[20px] text-center flex items-center justify-center font-bold self-start">
-                                <img class="rounded-full" alt="image" width="50"
-                                     src="~/Content/assets/images/avatar/1.jpg">
-                            </div>
-                            <div class="flex-1">
-                                <h5 class="mb-1 text-black dark:text-white dark:text-white font-semibold text-base">
-                                    <a class="text-black dark:text-white dark:text-white"
-                                       href="javascript:void(0);">Olivia Johnson</a>
-                                </h5>
-                                <p class="text-[14px] text-primary block">
-                                    <i class="las la-ticket-alt ml-1 mr-2 scale-150"></i>Height Performance
-                                    conert 2020
-                                </p>
-                            </div>
-                            <p class="text-[0.875rem]">2m ago</p>
-                        </div>
-                        <div class="flex border-b border-[#eaeaea] dark:border-[#3b3f45] pb-[15px] mb-[15px] items-end">
-                            <div class="mr-4 w-[50px] h-[50px] bg-[#eee] rounded-full overflow-hidden text-[20px] text-center flex items-center justify-center font-bold self-start">
-                                <img class="rounded-full" alt="image" width="50"
-                                     src="~/Content/assets/images/avatar/2.jpg">
-                            </div>
-                            <div class="flex-1">
-                                <h5 class="mb-1 text-black dark:text-white dark:text-whitefont-semibold text-base">
-                                    <a class="text-black dark:text-white dark:text-white"
-                                       href="javascript:void(0);">Griezerman</a>
-                                </h5>
-                                <p class="text-[14px] text-primary block">
-                                    <i class="las la-ticket-alt ml-1 mr-2 scale-150"></i>Fireworks Show New
-                                    Year 2020
-
-                                </p>
-                            </div>
-                            <p class="text-[0.875rem]">5m ago</p>
-                        </div>
-                        <div class="flex border-b border-[#eaeaea] dark:border-[#3b3f45] pb-[15px] mb-[15px] items-end">
-                            <div class="mr-4 w-[50px] h-[50px] bg-[#eee] rounded-full overflow-hidden text-[20px] text-center flex items-center justify-center font-bold self-start">
-                                <img class="rounded-full" alt="image" width="50"
-                                     src="~/Content/assets/images/avatar/3.jpg">
-                            </div>
-                            <div class="flex-1">
-                                <h5 class="mb-1 text-black dark:text-white dark:text-white font-semibold text-base">
-                                    <a class="text-black dark:text-white dark:text-white"
-                                       href="javascript:void(0);">Uli Trumb</a>
-                                </h5>
-                                <p class="text-[14px] text-primary block">
-                                    <i class="las la-ticket-alt ml-1 mr-2 scale-150"></i>Fireworks Show New
-                                    Year 2020
-
-                                </p>
-                            </div>
-                            <p class="text-[0.875rem]">8m ago</p>
-                        </div>
-                        <div class="flex border-b border-[#eaeaea] dark:border-[#3b3f45] pb-[15px] mb-[15px] items-end">
-                            <div class="mr-4 w-[50px] h-[50px] bg-[#eee] rounded-full overflow-hidden text-[20px] text-center flex items-center justify-center font-bold self-start">
-                                <img class="rounded-full" alt="image" width="50"
-                                     src="~/Content/assets/images/avatar/3.jpg">
-                            </div>
-                            <div class="flex-1">
-                                <h5 class="mb-1 text-black dark:text-white dark:text-white font-semibold text-base">
-                                    <a class="text-black dark:text-white dark:text-white"
-                                       href="javascript:void(0);">Oconner</a>
-                                </h5>
-                                <p class="text-[14px] text-primary block">
-                                    <i class="las la-ticket-alt ml-1 mr-2 scale-150"></i>Fireworks Show New
-                                    Year 2020
-
-                                </p>
-                            </div>
-                            <p class="text-[0.875rem]">12m ago</p>
-                        </div>
-                    </div>
-                    <div class="bg-transparent px-[1.875rem] pb-[1.25rem] text-center">
-                        <a href="javascript:void(0);"
-                           class="dz-load-more text-primary px-[1.25rem] py-[0.65rem] font-normal text-[0.9375rem] dark:text-white"
-                           id="RecentActivity" rel="ajax/recentactivity.html">
-                            View more<i class="ms-2 scale-2 fa fa-angle-down"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="xl:w-full">
-                <div class="card">
-                    <div class="card-body p-[1.875rem]">
-                        <div class="row mx-0">
-                            <div class="sm:w-full lg:w-1/3">
-                                <h2 class="font-semibold text-[1.875] mb-2">
-                                    862,441 <small class="mb-2 text-lg ml-2 font-semibold">pcs</small>
-                                </h2>
-                                <p class="text-xl text-black dark:text-white font-thin">Ticket Sold Today</p>
-                                <div class="justify-between flex text-sm items-end">
-                                    <a href="analytics.html" class="text-primary">
-                                        View more <i class="las la-long-arrow-alt-right scale-150 ml-2"></i>
-                                    </a>
-                                    <div class="text-end">
-                                        <span class="peity-primary" data-style="width:100%;">0,2,1,4</span>
-                                        <h3 class="mt-2 mb-1">+4%</h3>
-                                        <span class="text-[#8f8f8f]">than last day</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="sm:w-full lg:w-[66.66%]">
-                                <canvas id="ticketSold" height="200"></canvas>
-                            </div>
-                        </div>
-                    </div>
+                <div class="cont-box">
+                    <img src="~/Content/images/email.png" class="cont-icon" alt="Email icon" />
+                    <p>
+                        abhanot@pciglobal.in
+                    </p>
                 </div>
             </div>
         </div>

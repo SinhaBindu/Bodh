@@ -19,34 +19,42 @@
     <script src="~/Content/js/initcarousel-1.js"></script>
     <script src="~/Content/js/amazingcarousel.js"></script>
     <style>
-        .loader {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            width: 100vw;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 99999;
-            background: #fff;
+        body {
+            height: 100%;
+            margin: 0;
         }
+            .loader {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                width: 100vw;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 99999;
+                background: #fff;
+            }
+        /*.no-scroll {
+            overflow: hidden;
+        }*/
+
     </style>
 </head>
 <body>
     <div class="loader">
-        <div id="zoom-box">
-            <img src="~/Content/images/main-logo.png" id="myImage">
+            <div id="zoom-box">
+                <img src="~/Content/images/main-logo.png" id="myImage">
+            </div>
         </div>
-    </div>
 
     @Html.Partial("_Header")
     @RenderBody()
     @Html.Partial("_Footer")
 
     @*@Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)*@
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)*@
     <script id="rendered-js">
         (function ($) {
             $(function () {
@@ -75,6 +83,8 @@
         });
     </script>
     <script>
+        document.body.classList.add('no-scroll');
+
         window.addEventListener('load', function () {
             $('.loader').fadeIn(2000);
             $('#zoom-box').animate({
@@ -83,7 +93,7 @@
                 top: '40%',
                 left: '40%',
             }, 500);
-            
+
         });
 
         function fadeout() {
@@ -96,7 +106,7 @@
             $('.loader').fadeOut(1000);
             $('.loader').addClass('hidden');
         }
-        
+
         setInterval(fadeout, 2000);
     </script>
 </body>
