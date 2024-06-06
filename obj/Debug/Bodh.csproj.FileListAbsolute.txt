@@ -209,8 +209,8 @@ D:\PCI\Bodh\bin\Microsoft.Owin.Security.Twitter.xml
 D:\PCI\Bodh\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\PCI\Bodh\bin\Microsoft.Owin.Security.OAuth.xml
 D:\PCI\Bodh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\PCI\Bodh\obj\Debug\Bodh.csproj.AssemblyReference.cache
 D:\PCI\Bodh\obj\Debug\Bodh.csproj.CoreCompileInputs.cache
 D:\PCI\Bodh\obj\Debug\Bodh.csproj.CopyComplete
 D:\PCI\Bodh\obj\Debug\Bodh.dll
 D:\PCI\Bodh\obj\Debug\Bodh.pdb
+D:\PCI\Bodh\obj\Debug\Bodh.csproj.AssemblyReference.cache
