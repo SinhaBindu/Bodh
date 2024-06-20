@@ -45,12 +45,7 @@ header,
         width: 250px;
     }
 
-.single-nav {
-    padding: 8px 25px;
-    background: #FFA968;
-    border-radius: 6px;
-    color: #fff;
-}
+
 
 .banner {
     padding-top: 60px;
@@ -1121,4 +1116,129 @@ header,
 }
 .submit-btn:hover {
     background: #f36131;
+}
+.pages-banner {
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    background-image: url('../images/our-work-bg.jpg');
+}
+.our-work-content {
+    margin: auto;
+    max-width: 1100px;
+    background: #fff;
+    padding: 60px 0;
+    margin-top: -320px;
+    position: relative;
+    z-index: 2;
+}
+    .our-work-content h1 {
+        font-size: 55px;
+        text-align: left;
+        font-weight: 500;
+        margin-top: 10px;
+        margin-bottom: 40px;
+        padding: 0 50px
+    }
+    .our-work-content p {
+        font-size: 21px;
+        color: #1D1D1D;
+        padding: 0 50px;
+        line-height: 35px;
+    }
+.quick-tab {
+    padding: 30px;
+    background: #FFEFE3;
+    text-align: center;
+}
+    .quick-tab a {
+        padding: 0 15px;
+        font-size: 18px;
+        border-right: 1px solid #DFD1C7;
+    }
+        .quick-tab a:last-child {
+            border-right: none;
+        }
+.full-content {
+    padding: 40px 20px;
+}
+.page-content {
+    margin: auto;
+    max-width:1100px;
+}
+
+ol {
+    padding: 0px
+}
+.page-content h2 {
+    font-size: 26px;
+    font-weight: 600
+}
+.page-content h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #FFA968;
+    margin-bottom: 0;
+}
+.page-content p {
+    font-size: 16px;
+    color: #595959
+}
+.page-content li {
+    font-size: 16px;
+    color: #595959;
+    padding: 8px 0
+}
+.wh {
+    background: #fff
+}
+.cl {
+    background: #FAFAFA
+}
+.img-lft {
+    float: left;
+    width: 45%;
+    margin-right: 30px;
+    margin-bottom: 15px;
+}
+.img-rt {
+    float: right;
+    width: 45%;
+    margin-left: 30px;
+    margin-bottom: 15px;
+}
+.box-flex {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+}
+.boxes-line {
+    flex: 1;
+    text-align: center;
+    border: 1px solid #DBDBDB;
+    padding: 10px 20px;
+}
+    .boxes-line:hover {
+        background: #FFEFE3;
+    }
+    .boxes-line p {
+        font-size: 15px
+    }
+.high-bg {
+    background: #663A5F;
+    color: #fff;
+    padding: 2px 6px;
+    font-size: 16px;
+}
+.funnel {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+.funnel-box {
+    padding: 10px 30px;
+    flex: 1;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }

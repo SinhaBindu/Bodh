@@ -22,6 +22,11 @@ namespace Bodh.Controllers
             return View();
         }
 
+        public ActionResult OurWork()
+        {
+            return View();
+        }
+
         public ActionResult StudiesPaper()
         {
             return View();

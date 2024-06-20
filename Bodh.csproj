@@ -436,17 +436,22 @@
     <Content Include="Content\images\client\sbi-life.png" />
     <Content Include="Content\images\client\tech-mahindra.png" />
     <Content Include="Content\images\client\viacom18.png" />
+    <Content Include="Content\images\community-engagement.jpg" />
     <Content Include="Content\images\define.png" />
     <Content Include="Content\images\design.png" />
     <Content Include="Content\images\diagnose.png" />
     <Content Include="Content\images\email.png" />
+    <Content Include="Content\images\engaging-men.jpg" />
     <Content Include="Content\images\healthy.png" />
     <Content Include="Content\images\icon.png" />
+    <Content Include="Content\images\ifa-supplement.jpg" />
     <Content Include="Content\images\location.png" />
     <Content Include="Content\images\main-logo.png" />
     <Content Include="Content\images\method-bg.png" />
     <Content Include="Content\images\Middle.png" />
+    <Content Include="Content\images\migrant-girl.jpg" />
     <Content Include="Content\images\original-left.png" />
+    <Content Include="Content\images\our-work-bg.jpg" />
     <Content Include="Content\images\react.svg" />
     <Content Include="Content\images\right.png" />
     <Content Include="Content\images\telephone.png" />
@@ -553,6 +558,7 @@
     <Content Include="Views\Shared\_HeaderDashboard.cshtml" />
     <Content Include="Views\Shared\_SidebarDashboard.cshtml" />
     <Content Include="Views\Home\StudiesPaper.cshtml" />
+    <Content Include="Views\Home\OurWork.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
