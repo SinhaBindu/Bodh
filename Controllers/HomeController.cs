@@ -31,6 +31,23 @@ namespace Bodh.Controllers
         {
             return View();
         }
+
+        public ActionResult MaleEngagement()
+        {
+            return View();
+        }
+        public ActionResult RCCEBihar()
+        {
+            return View();
+        }
+        public ActionResult SRHRNeedsInMigrant()
+        {
+            return View();
+        }
+        public ActionResult IFAAdherence()
+        {
+            return View();
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

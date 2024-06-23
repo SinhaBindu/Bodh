@@ -559,6 +559,10 @@
     <Content Include="Views\Shared\_SidebarDashboard.cshtml" />
     <Content Include="Views\Home\StudiesPaper.cshtml" />
     <Content Include="Views\Home\OurWork.cshtml" />
+    <Content Include="Views\Home\IFAAdherence.cshtml" />
+    <Content Include="Views\Home\SRHRNeedsInMigrant.cshtml" />
+    <Content Include="Views\Home\RCCEBihar.cshtml" />
+    <Content Include="Views\Home\MaleEngagement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

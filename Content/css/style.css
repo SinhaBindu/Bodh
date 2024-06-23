@@ -1147,21 +1147,38 @@ header,
         line-height: 35px;
     }
 .quick-tab {
-    padding: 30px;
-    background: #FFEFE3;
+    margin: auto;
+    max-width: 1100px;
+    display: flex;
+    gap: 30px;
     text-align: center;
 }
-    .quick-tab a {
-        padding: 0 15px;
-        font-size: 18px;
-        border-right: 1px solid #DFD1C7;
-    }
-        .quick-tab a:last-child {
-            border-right: none;
-        }
-.full-content {
-    padding: 40px 20px;
+.work-list {
+    flex: 1;
 }
+    .work-list img {
+        border-radius: 20px;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+    }
+        .work-list img:hover {
+            transform: scale(1.04);
+            -moz-transform: scale(1.04);
+            -webkit-transform: scale(1.04);
+            -o-transform: scale(1.04);
+            -ms-transform: scale(1.04); /* IE 9 */
+        }
+        .work-list h4 {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: normal;
+            color: #f6845e
+        }
+    .full-content {
+        padding: 0px 20px 40px;
+    }
 .page-content {
     margin: auto;
     max-width:1100px;
@@ -1188,6 +1205,10 @@ ol {
     font-size: 16px;
     color: #595959;
     padding: 8px 0
+}
+.quick-tab-bg {
+    background: #FAFAFA;
+    padding: 60px 20px 30px
 }
 .wh {
     background: #fff
