@@ -53,7 +53,7 @@ header,
 
 .banner {
     padding-top: 60px;
-    gap: 50px;
+    /*gap: 50px;*/
     padding-bottom: 80px;
 }
 .banner-content {
