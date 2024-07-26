@@ -22,7 +22,13 @@ img {
 a {
     text-decoration: none;
 }
-
+.title-br-cntr {
+    display: block;
+    height: 4px;
+    margin: auto;
+    width: 90px;
+    background: #FDDFB4
+}
 header {
     position: relative;
     z-index: 99999;
@@ -45,14 +51,17 @@ header,
         width: 250px;
     }
 
-
-
 .banner {
     padding-top: 60px;
     gap: 50px;
     padding-bottom: 80px;
 }
-
+.banner-content {
+    flex: 2;
+}
+.banner-image {
+    flex: 1
+}
 .banner-content h2 {
     font-size: 55px;
     font-weight: 500;
@@ -67,10 +76,10 @@ header,
     }
 
 .banner-content p {
-    font-size: 16px;
+    font-size: 15px;
     padding-right: 100px;
     margin-bottom: 30px;
-    line-height: 32px;
+    line-height: 28px;
 }
 
 .banner-content a {
@@ -188,7 +197,7 @@ header,
 
     .method-section h2 {
         font-size: 45px;
-        margin-bottom: 50px;
+        margin-bottom: 10px !important;
         margin-top: 10px;
     }
 
@@ -302,11 +311,41 @@ header,
 .process-design {
     margin: auto;
     max-width: 1112px;
+    padding: 20px 0 50px;
+    margin-top: 50px
+}
+    .process-design p {
+        font-size: 16px;
+        line-height: 30px;
+        color: #353535;
+        padding: 20px;
+        text-align: left;
+        margin: 10px 0
+    }
+.content-design {
+    margin-top: 60px;
     display: flex;
     align-items: center;
-    padding-bottom: 30px
+    justify-content: center;
+    gap: 30px
 }
-
+    .content-design div {
+        flex: 1;
+    }
+.prism-data {
+    padding: 10px 20px;
+    background: #FFEED7;
+    border-radius: 15px;
+}
+.highlight {
+    color: #f36131
+}
+.highlights {
+    display: inline-block;
+    background: #F2F3F7;
+    padding: 0 10px;
+    color: #222
+}
 .process-mar-top {
     margin-top: 56px
 }

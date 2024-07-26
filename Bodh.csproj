@@ -452,6 +452,7 @@
     <Content Include="Content\images\migrant-girl.jpg" />
     <Content Include="Content\images\original-left.png" />
     <Content Include="Content\images\our-work-bg.jpg" />
+    <Content Include="Content\images\prism.png" />
     <Content Include="Content\images\react.svg" />
     <Content Include="Content\images\right.png" />
     <Content Include="Content\images\telephone.png" />
