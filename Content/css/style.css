@@ -22,6 +22,11 @@ img {
 a {
     text-decoration: none;
 }
+.breaker {
+    display: block;
+    clear: both;
+    height: 30px;
+}
 .title-br-cntr {
     display: block;
     height: 4px;
@@ -387,6 +392,7 @@ header,
     float: left;
     margin: 0 1% 15px;
     padding: 10px 0;
+    background: #fff;
 }
 
     .post-tag .dater {
@@ -803,7 +809,10 @@ header,
     flex: 1;
     text-align: left
 }
-
+.blog-img {
+    border-bottom: 1px solid #F3F3F3;
+    padding: 0px 0 6px;
+}
     .blog-content h2 {
         font-size: 35px;
         font-weight: 500
@@ -1162,6 +1171,9 @@ header,
     position: relative;
     background-image: url('../images/our-work-bg.jpg');
 }
+.rcce-banner {
+    background-image: url('../images/rcce-bihar-banner.jpg');
+}
 .our-work-content {
     margin: auto;
     max-width: 1100px;
@@ -1301,4 +1313,13 @@ ol {
     background: #fff;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+.rcce-video {
+    margin: auto;
+    max-width: 700px;
+    border: 10px solid #F2F2F2;
+}
+.rcce-video h3 {
+    text-align: center;
+    margin-bottom: 20px;
 }
