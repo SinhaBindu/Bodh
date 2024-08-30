@@ -1323,3 +1323,36 @@ ol {
     text-align: center;
     margin-bottom: 20px;
 }
+
+.video-box {
+    margin: auto;
+    max-width: 900px;
+    padding: 30px 0;
+    text-align: center;
+    color: #FFA968
+}
+    .video-box h2 {
+        font-weight: 500;
+        font-size: 22px;
+        text-transform: uppercase
+    }
+    .side-vide {
+        margin: 0 10px;
+    }
+
+.side-video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    margin-top: 0px;
+    overflow: hidden;
+}
+
+    .side-video-container iframe, .side-video-container object, .side-video-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
