@@ -61,5 +61,21 @@ namespace Bodh.Controllers
 
             return View();
         }
+        public ActionResult BarrierIdentification()
+        {
+            return View();
+        }
+        public ActionResult SolutionDevelopment()
+        {
+            return View();
+        }
+        public ActionResult SolutionTesting()
+        {
+            return View();
+        }
+        public ActionResult MonitoringAndEvaluation()
+        {
+            return View();
+        }
     }
 }

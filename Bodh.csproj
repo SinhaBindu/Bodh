@@ -452,6 +452,7 @@
     <Content Include="Content\images\migrant-girl.jpg" />
     <Content Include="Content\images\original-left.png" />
     <Content Include="Content\images\our-work-bg.jpg" />
+    <Content Include="Content\images\pages-banner.jpg" />
     <Content Include="Content\images\prism.png" />
     <Content Include="Content\images\react.svg" />
     <Content Include="Content\images\right.png" />
@@ -564,6 +565,10 @@
     <Content Include="Views\Home\SRHRNeedsInMigrant.cshtml" />
     <Content Include="Views\Home\RCCEBihar.cshtml" />
     <Content Include="Views\Home\MaleEngagement.cshtml" />
+    <Content Include="Views\Home\BarrierIdentification.cshtml" />
+    <Content Include="Views\Home\SolutionDevelopment.cshtml" />
+    <Content Include="Views\Home\SolutionTesting.cshtml" />
+    <Content Include="Views\Home\MonitoringAndEvaluation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
