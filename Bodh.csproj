@@ -408,6 +408,7 @@
     <Content Include="Content\css\aos.css" />
     <Content Include="Content\css\initcarousel-1.css" />
     <Content Include="Content\css\nav.css" />
+    <Content Include="Content\css\smartphoto.min.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\images\adolescent.png" />
     <Content Include="Content\images\adult.png" />
@@ -430,6 +431,7 @@
     <Content Include="Content\images\client\amazon.png" />
     <Content Include="Content\images\client\amdocs 1.png" />
     <Content Include="Content\images\client\bajaj-finserv.png" />
+    <Content Include="Content\images\diverge.jpg" />
     <Content Include="Content\images\client\flipkart.png" />
     <Content Include="Content\images\client\glance.png" />
     <Content Include="Content\images\client\raymond.png" />
@@ -437,31 +439,39 @@
     <Content Include="Content\images\client\tech-mahindra.png" />
     <Content Include="Content\images\client\viacom18.png" />
     <Content Include="Content\images\community-engagement.jpg" />
+    <Content Include="Content\images\conation-affect-cognition.png" />
     <Content Include="Content\images\define.png" />
     <Content Include="Content\images\design.png" />
     <Content Include="Content\images\diagnose.png" />
     <Content Include="Content\images\email.png" />
     <Content Include="Content\images\engaging-men.jpg" />
+    <Content Include="Content\images\health-behavior.png" />
     <Content Include="Content\images\healthy.png" />
+    <Content Include="Content\images\human-behavior.png" />
     <Content Include="Content\images\icon.png" />
     <Content Include="Content\images\ifa-supplement.jpg" />
+    <Content Include="Content\images\integrative-model.png" />
     <Content Include="Content\images\location.png" />
     <Content Include="Content\images\main-logo.png" />
     <Content Include="Content\images\method-bg.png" />
     <Content Include="Content\images\Middle.png" />
     <Content Include="Content\images\migrant-girl.jpg" />
+    <Content Include="Content\images\monitoring.png" />
+    <Content Include="Content\images\motivation.png" />
     <Content Include="Content\images\original-left.png" />
     <Content Include="Content\images\our-work-bg.jpg" />
     <Content Include="Content\images\pages-banner.jpg" />
     <Content Include="Content\images\prism.png" />
     <Content Include="Content\images\react.svg" />
     <Content Include="Content\images\right.png" />
+    <Content Include="Content\images\sem.png" />
     <Content Include="Content\images\telephone.png" />
     <Content Include="Content\images\test.png" />
     <Content Include="Content\images\work-area.png" />
     <Content Include="Content\js\amazingcarousel.js" />
     <Content Include="Content\js\aos.js" />
     <Content Include="Content\js\initcarousel-1.js" />
+    <Content Include="Content\js\smartphoto.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -570,6 +580,8 @@
     <Content Include="Views\Home\SolutionDevelopment.cshtml" />
     <Content Include="Views\Home\SolutionTesting.cshtml" />
     <Content Include="Views\Home\MonitoringAndEvaluation.cshtml" />
+    <Content Include="Views\Home\BodhWay.cshtml" />
+    <Content Include="Views\Home\Services.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

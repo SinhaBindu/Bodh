@@ -77,5 +77,15 @@ namespace Bodh.Controllers
         {
             return View();
         }
+
+        public ActionResult BodhWay()
+        {
+            return View();
+        }
+
+        public ActionResult Services()
+        {
+            return View();
+        }
     }
 }
