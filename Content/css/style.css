@@ -986,11 +986,12 @@ header,
 .download-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly
 }
 
 .downloads {
     margin: 0 1.5%;
-    flex-basis: 30%;
+    flex-basis: 46%;
     background: #fff;
     border-radius: 7px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
@@ -1399,3 +1400,22 @@ ol {
     width: 33%;
     margin-right: 30px
 }
+@media screen and (max-width: 1200px) {
+    .download-paper {
+        padding: 0 20px
+    }
+
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 900px){
+
+}
+@media screen and (max-width: 768px) {
+    .download-list {
+        flex-direction: column;
+        gap: 30px
+    }
+}
+
+
