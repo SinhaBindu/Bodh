@@ -973,6 +973,7 @@ header,
     padding: 40px 0;
     margin: auto;
     max-width: 1024px;
+    min-height: 500px
 }
 
     .download-paper h2 {
@@ -1432,14 +1433,18 @@ ol {
     align-items: center;
     margin: 35px 0;
 }
-.service-title {
-    background: #FFEFE3;
-    padding: 30px 20px;
-    text-align: center;
-    margin: 0 0 0px;
-    font-size: 50px;
-    font-weight: 500
+.bodh-graphic a {
+    color: #f36131;
+    text-decoration: underline;
 }
+    .service-title {
+        background: #FFEFE3;
+        padding: 30px 20px;
+        text-align: center;
+        margin: 0 0 0px;
+        font-size: 50px;
+        font-weight: 500
+    }
 .service-box {
     max-width: 1200px;
     margin: auto;
@@ -1463,9 +1468,15 @@ ol {
 box-2 {
     width: 250px
 }
+.box-2 img {
+    width: 150px
+}
 .service-bg {
     background: #F0F3FA;
     padding: 0px 20px;
+}
+.diverge {
+    width: 70%
 }
 @media screen and (max-width: 1200px) {
     .download-paper {

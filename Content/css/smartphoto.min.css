@@ -23,11 +23,13 @@
 
 .brick {
     float: left;
-    width: 29%;
-    margin-left: 1%;
+    width: 26%;
     overflow: hidden;
     margin-bottom: 15px;
 }
+    .brick img {
+        width: 100%
+    }
     .brick a {
         display: block;
         width: 100%;

@@ -1,0 +1,377 @@
+﻿
+@{
+    ViewBag.Title = "dashboard";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="page-titles dark:bg-[#1b1b1b] rounded-lg flex items-center justify-between relative  mb-[1.875rem] flex-wrap z-[1] py-[0.9375rem] sm:px-[0.975rem] px-[1.875rem] bg-white">
+            <ol class="text-[0.875rem] flex items-center flex-wrap bg-transparent">
+                <li>
+                    <a href="javascript:void(0)" class="text-[#828690] dark:text-white text-[0.875rem]">
+                        Table
+                    </a>
+                </li>
+                <li class="pl-2 before:content-['/'] before:font-[simple-line-icons] before:font-black before:text-xl before:leading-4 before:pr-2 before:float-left before:text-primary font-semibold"><a href="javascript:void(0)" class="text-primary "></a>Table Basic</li>
+            </ol>
+        </div>
+        <div class="row">
+            <!-- Column starts -->
+            <div class="w-full">
+                <div class="card dz-card dz-tab-area" id="Tailwind-table1">
+                    <div class="card-header flex flex-wrap justify-between items-center py-5 px-[1.875rem] max-sm:pb-5 relative z-[2]">
+                        <h4 class="card-title">Recent Payments Queue</h4>
+                    </div>
+                    <!--tab-content-->
+                    <div class="pt-0 p-[1.875rem]">
+                        <div class="overflow-x-auto table-scroll">
+                            <table class="text-left mb-4 min-w-[36rem] w-full">
+                                <thead>
+                                    <tr>
+                                        <th class="dark:bg-transparent py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-base text-sm font-normal text-black" style="width:80px;"><strong class="font-semibold text-[15px]">#</strong></th>
+                                        <th class="dark:bg-transparent py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-base text-sm font-normal text-black"><strong class="font-semibold text-[15px]">PATIENT</strong></th>
+                                        <th class="dark:bg-transparent py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-base text-sm font-normal text-black"><strong class="font-semibold text-[15px]">DR NAME</strong></th>
+                                        <th class="dark:bg-transparent py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-base text-sm font-normal text-black"><strong class="font-semibold text-[15px]">DATE</strong></th>
+                                        <th class="dark:bg-transparent py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-base text-sm font-normal text-black"><strong class="font-semibold text-[15px]">STATUS</strong></th>
+                                        <th class="dark:bg-transparent py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-base text-sm font-normal text-black"><strong class="font-semibold text-[15px]">PRICE</strong></th>
+                                        <th class="dark:bg-transparent py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-base text-sm font-normal text-black">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color"><strong>01</strong></td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">Mr. Bobby</td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">Dr. Jackson</td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">01 August 2020</td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color"><span class="text-xs py-[5px] px-3 rounded-lg leading-[1.5] inline-block text-success bg-success-light dark:bg-[#21b7311a]">Successful</span></td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">$21.56</td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">
+                                            <div class="dropdown">
+                                                <button type="button" class="btn min-w-[2.4rem] p-[0.4375rem] h-[2.4rem] leading-[1.7] min-h-[2.5rem] btn-success rounded-md dz-dropdown bg-success-light hover:bg-success duration-300 light sharp" data-dz-dropdown="dropdown-1">
+                                                    <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24" /><circle fill="#000000" cx="5" cy="12" r="2" /><circle fill="#000000" cx="12" cy="12" r="2" /><circle fill="#000000" cx="19" cy="12" r="2" /></g></svg>
+                                                </button>
+                                                <div class="dz-dropdown-menu dropdown-menu-end border py-2 rounded-md min-w-[10rem] z-[9] translate-x-[-64px] translate-y-1 shadow-[0_0_3.125rem_0_rgba(82,63,105,0.15)] overflow-hidden border-b-color absolute bg-white dark:bg-[#1b1b1b] dark:shadow-[0rem_0rem_0rem_0.0625rem_rgba(255,255,255,0.1)] hidden" id="dropdown-1">
+                                                    <a class="dropdown-item py-2 px-5 text-body-color text-[13px] block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Edit</a>
+                                                    <a class="dropdown-item py-2 px-5 text-body-color text-[13px] block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Delete</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color"><strong>02</strong></td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">Mr. Bobby</td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">Dr. Jackson</td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">01 August 2020</td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color"><span class="text-xs py-[5px] px-3 rounded-lg leading-[1.5] inline-block text-danger bg-danger-light">Canceled</span></td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">$21.56</td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">
+                                            <div class="dropdown">
+                                                <button type="button" class="btn min-w-[2.4rem] p-[0.4375rem] h-[2.4rem] leading-[1.7] min-h-[2.5rem] btn-danger rounded-md dz-dropdown bg-danger-light hover:bg-danger duration-300 light sharp" data-dz-dropdown="dropdown-2">
+                                                    <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24" /><circle fill="#000000" cx="5" cy="12" r="2" /><circle fill="#000000" cx="12" cy="12" r="2" /><circle fill="#000000" cx="19" cy="12" r="2" /></g></svg>
+                                                </button>
+                                                <div class="dz-dropdown-menu dropdown-menu-end border py-2 rounded-md min-w-[10rem] z-[9] translate-x-[-64px] translate-y-1 shadow-[0_0_3.125rem_0_rgba(82,63,105,0.15)] overflow-hidden border-b-color absolute bg-white dark:bg-[#1b1b1b] dark:shadow-[0rem_0rem_0rem_0.0625rem_rgba(255,255,255,0.1)] hidden" id="dropdown-2">
+                                                    <a class="dropdown-item py-2 px-5 text-body-color text-[13px] block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Edit</a>
+                                                    <a class="dropdown-item py-2 px-5 text-body-color text-[13px] block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Delete</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color"><strong>03</strong></td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">Mr. Bobby</td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">Dr. Jackson</td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">01 August 2020</td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color"><span class="text-xs py-[5px] px-3 rounded-lg leading-[1.5] inline-block text-warning bg-warning-light">Pending</span></td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">$21.56</td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">
+                                            <div class="dropdown">
+                                                <button type="button" class="btn min-w-[2.4rem] p-[0.4375rem] h-[2.4rem] leading-[1.7] min-h-[2.5rem] btn-warning rounded-md dz-dropdown bg-warning-light hover:bg-warning duration-300 light sharp" data-dz-dropdown="dropdown-3">
+                                                    <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24" /><circle fill="#000000" cx="5" cy="12" r="2" /><circle fill="#000000" cx="12" cy="12" r="2" /><circle fill="#000000" cx="19" cy="12" r="2" /></g></svg>
+                                                </button>
+                                                <div class="dz-dropdown-menu dropdown-menu-end border py-2 rounded-md min-w-[10rem] z-[9] translate-x-[-64px] translate-y-1 shadow-[0_0_3.125rem_0_rgba(82,63,105,0.15)] overflow-hidden border-b-color absolute bg-white dark:bg-[#1b1b1b] dark:shadow-[0rem_0rem_0rem_0.0625rem_rgba(255,255,255,0.1)] hidden" id="dropdown-3">
+                                                    <a class="dropdown-item py-2 px-5 text-body-color text-[13px] block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Edit</a>
+                                                    <a class="dropdown-item py-2 px-5 text-body-color text-[13px] block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Delete</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--/tab-content-->
+                </div>
+            </div>
+            <!-- Column ends -->
+            <!-- Column starts -->
+            <div class="w-full">
+                <div class="card dz-card dz-tab-area" id="Tailwind-table2">
+                    <div class="card-header flex flex-wrap justify-between items-center py-5 px-[1.875rem] max-sm:pb-5 relative z-[2]">
+                        <h4 class="card-title">Exam Toppers</h4>
+                    </div>
+                    <!--tab-content-->
+                    <div class="pt-0 p-[1.875rem]">
+                        <div class="overflow-x-auto table-scroll">
+                            <table class="text-left mb-4 min-w-[36rem] w-full ItemsCheckboxSec">
+                                <thead>
+                                    <tr>
+                                        <th class="dark:bg-transparent py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-base text-sm font-normal text-black" style="width:50px;">
+                                            <div class="form-check leading-normal block min-h-[1.3125rem] pl-[1.5em] mb-0.5 mr-4 custom-checkbox">
+                                                <input type="checkbox" class="form-check-input checkAll w-6 h-6" id="checkInput" required="">
+                                                <label class="form-check-label" for="checkInput"></label>
+                                            </div>
+                                        </th>
+                                        <th class="dark:bg-transparent py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-base text-sm font-normal text-black"><strong class="font-semibold text-[15px]">ROLL NO.</strong></th>
+                                        <th class="dark:bg-transparent py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-base text-sm font-normal text-black"><strong class="font-semibold text-[15px]">NAME</strong></th>
+                                        <th class="dark:bg-transparent py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-base text-sm font-normal text-black"><strong class="font-semibold text-[15px]">Email</strong></th>
+                                        <th class="dark:bg-transparent py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-base text-sm font-normal text-black"><strong class="font-semibold text-[15px]">Date</strong></th>
+                                        <th class="dark:bg-transparent py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-base text-sm font-normal text-black"><strong class="font-semibold text-[15px]">Status</strong></th>
+                                        <th class="dark:bg-transparent py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-base text-sm font-normal text-black"><strong class="font-semibold text-[15px]"></strong></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">
+                                            <div class="form-check leading-normal block min-h-[1.3125rem] pl-[1.5em] mb-0.5 mr-4 custom-checkbox">
+                                                <input type="checkbox" class="form-check-input w-6 h-6" id="customCheckBox2" required="">
+                                                <label class="form-check-label" for="customCheckBox2"></label>
+                                            </div>
+                                        </td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color"><strong>542</strong></td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">
+                                            <div class="flex items-center">
+                                                <img src="assets/images/avatar/1.jpg" class="rounded-lg mr-2 min-w-[1.875rem]" width="24" alt="">
+                                                <span class="w-space-no">Dr. Jackson</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">example@example.com	</td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">01 August 2020</td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color"><div class="flex items-center"><i class="fa fa-circle text-success mr-1"></i> Successful</div></td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a]">
+                                            <div class="flex">
+                                                <a href="javascript:void(0);" class="btn w-[1.625rem] h-[1.625rem] leading-[1.625rem] rounded-md text-center text-white bg-primary hover:bg-hover-primary hover:border-hover-primary duration-300 mr-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0);" class="btn w-[1.625rem] h-[1.625rem] leading-[1.625rem] rounded-md text-center text-white bg-danger hover:bg-danger-hover duration-300 sharp"><i class="fa fa-trash"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">
+                                            <div class="form-check leading-normal block min-h-[1.3125rem] pl-[1.5em] mb-0.5 mr-4 custom-checkbox">
+                                                <input type="checkbox" class="form-check-input w-6 h-6" id="customCheckBox3" required="">
+                                                <label class="form-check-label" for="customCheckBox3"></label>
+                                            </div>
+                                        </td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color"><strong>542</strong></td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color"><div class="flex items-center"><img src="assets/images/avatar/2.jpg" class="rounded-lg mr-2 min-w-[1.875rem]" width="24" alt=""> <span class="w-space-no">Dr. Jackson</span></div></td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">example@example.com	</td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">01 August 2020</td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color"><div class="flex items-center"><i class="fa fa-circle text-danger mr-1"></i> Canceled</div></td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a]">
+                                            <div class="flex">
+                                                <a href="javascript:void(0);" class="btn w-[1.625rem] h-[1.625rem] leading-[1.625rem] rounded-md text-center text-white bg-primary hover:bg-hover-primary hover:border-hover-primary duration-300 mr-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0);" class="btn w-[1.625rem] h-[1.625rem] leading-[1.625rem] rounded-md text-center text-white bg-danger hover:bg-danger-hover duration-300 sharp"><i class="fa fa-trash"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">
+                                            <div class="form-check leading-normal block min-h-[1.3125rem] pl-[1.5em] mb-0.5 mr-4 custom-checkbox">
+                                                <input type="checkbox" class="form-check-input w-6 h-6" id="customCheckBox4" required="">
+                                                <label class="form-check-label" for="customCheckBox4"></label>
+                                            </div>
+                                        </td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color"><strong>542</strong></td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color"><div class="flex items-center"><img src="assets/images/avatar/3.jpg" class="rounded-lg mr-2 min-w-[1.875rem]" width="24" alt=""> <span class="w-space-no">Dr. Jackson</span></div></td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">example@example.com	</td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color">01 August 2020</td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a] text-body-color"><div class="flex items-center"><i class="fa fa-circle text-warning mr-1"></i> Pending</div></td>
+                                        <td class="py-[0.9375rem] px-2.5 capitalize whitespace-nowrap sm:text-sm text-xs font-normal border-t border-[#E6E6E6] dark:border-[#ffffff1a]">
+                                            <div class="flex">
+                                                <a href="javascript:void(0);" class="btn w-[1.625rem] h-[1.625rem] leading-[1.625rem] rounded-md text-center text-white bg-primary hover:bg-hover-primary hover:border-hover-primary duration-300 mr-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0);" class="btn w-[1.625rem] h-[1.625rem] leading-[1.625rem] rounded-md text-center text-white bg-danger hover:bg-danger-hover duration-300 sharp"><i class="fa fa-trash"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--/tab-content-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="page-titles dark:bg-[#1b1b1b] rounded-lg flex items-center justify-between relative  mb-[1.875rem] flex-wrap z-[1] py-[0.9375rem] sm:px-[0.975rem] px-[1.875rem] bg-white">
+            <ol class="text-[0.875rem] flex items-center flex-wrap bg-transparent">
+                <li>
+                    <a href="javascript:void(0)" class="text-[#828690] dark:text-white text-[0.875rem]">
+                        Customer
+                    </a>
+                </li>
+                <li class="pl-2 before:content-['/'] before:font-[simple-line-icons] before:font-black before:text-xl before:leading-4 before:pr-2 before:float-left before:text-primary font-semibold"><a href="javascript:void(0)" class="text-primary ">Add Customer</a></li>
+            </ol>
+        </div>
+        <!-- row -->
+        <div class="row">
+            <div class="w-full">
+                <div class="card">
+                    <div class="card-header bg-primary px-[1.875rem] pt-6 pb-5 flex justify-between items-center rounded-t-lg">
+                        <h6 class="title text-white">Create Customer</h6>
+                    </div>
+                    <form class="profile-form">
+                        <div class="card-body px-10 pt-10 pb-[10px]">
+                            <div class="row">
+                                <div class="sm:w-1/2 mb-4">
+                                    <label class=" form-label text-[0.938rem] font-medium block required">First Name</label>
+                                    <input type="text" name="firstName" class="focus:outline-none form-control rounded-lg px-5 py-[0.3125rem] text-[#6e6e6e] h-[2.8rem] w-full border  border-[#e6e6e6]" placeholder="Enter First Name" required="">
+                                </div>
+                                <div class="sm:w-1/2 mb-4">
+                                    <label class=" form-label required">Last Name</label>
+                                    <input type="text" name="lastName" class="focus:outline-none form-control rounded-lg px-5 py-[0.3125rem] text-[#6e6e6e] h-[2.8rem] w-full border  border-[#e6e6e6]" placeholder="Enter Last Name" required="">
+                                </div>
+                                <div class="sm:w-1/2 mb-4">
+                                    <label class=" form-label required">Email Address</label>
+                                    <input type="email" class="focus:outline-none form-control rounded-lg px-5 py-[0.3125rem] text-[#6e6e6e] h-[2.8rem] w-full border  border-[#e6e6e6]" placeholder="Enter Email Address" required>
+                                </div>
+                                <div class="sm:w-1/2 mb-4">
+                                    <div class="form-group">
+                                        <label class=" form-label required">Password </label>
+                                        <div class="position-relative">
+                                            <input type="password" id="dz-password" class="focus:outline-none form-control relative rounded-lg px-5 py-[0.3125rem] text-[#6e6e6e] h-[2.8rem] w-full border  border-[#e6e6e6]" value="123456">
+                                            <span class="show-pass eye absolute top-[50%] right-14 translate-y-[-50%] text-[#7e7e7e]">
+                                                <i class="fa fa-eye-slash cursor-pointer"></i>
+                                                <i class="fa fa-eye"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sm:w-1/2 mb-4">
+                                    <label class=" form-label required">Gender</label>
+                                    <div class="default-select full">
+                                        <select class="nice-select w-full rounded-lg  text-[#6e6e6e]  border  border-[#e6e6e6]">
+                                            <option class="w-full" value="Today">Male</option>
+                                            <option class="w-full" value="Week">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="sm:w-1/2 mb-4">
+                                    <label class=" form-label required">Mobile Number</label>
+                                    <input type="number" class="focus:outline-none form-control rounded-lg px-5 py-[0.3125rem] text-[#6e6e6e] h-[2.8rem] w-full border  border-[#e6e6e6]" placeholder="212-999-0000" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer justify-end px-10 pt-[35px] pb-10 flex items-center">
+                            <button class="btn bg-primary py-[0.65rem] px-5 text-[0.9375rem] rounded-lg text-white">Create Customer</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="page-titles dark:bg-[#1b1b1b] rounded-lg flex items-center justify-between relative  mb-[1.875rem] flex-wrap z-[1] py-[0.9375rem] sm:px-[0.975rem] px-[1.875rem] bg-white">
+            <ol class="text-[0.875rem] flex items-center flex-wrap bg-transparent">
+                <li>
+                    <a href="javascript:void(0)" class="text-[#828690] dark:text-white text-[0.875rem]">
+                        Ticket
+                    </a>
+                </li>
+                <li class="pl-2 before:content-['/'] before:font-[simple-line-icons] before:font-black before:text-xl before:leading-4 before:pr-2 before:float-left before:text-primary font-semibold"><a href="javascript:void(0)" class="text-primary ">Create Ticket</a></li>
+            </ol>
+        </div>
+        <!-- row -->
+        <div class="row">
+            <div class="w-full">
+                <div class="card">
+                    <div class="card-body p-[1.875rem]">
+                        <!--form-validation-->
+                        <div class="form-validation">
+                            <div class="needs-validation">
+                                <div class="row">
+                                    <div class="w-full">
+                                        <div class="mb-4 row">
+                                            <label class="lg:w-1/4 text-black dark:text-white font-medium text-[0.938rem] pt-[8px] required" for="validationCustom01">Ticket Subject</label>
+                                            <div class="lg:w-3/4">
+                                                <input type="text" class="form-control w-full rounded-lg bg-white dark:bg-[#151515] border-[0.0625rem] border-[#e6e6e6] py-[0.3125rem] px-5 h-[2.8rem] focus:outline-none " id="validationCustom01" placeholder="Subject" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4 row">
+                                            <label class="lg:w-1/4 text-black dark:text-white font-medium text-[0.938rem] pt-[8px] required">Email address</label>
+                                            <div class="lg:w-3/4">
+                                                <input type="text" class="form-control w-full rounded-lg bg-white dark:bg-[#151515] border-[0.0625rem] border-[#e6e6e6] py-[0.3125rem] px-5 h-[2.8rem] focus:outline-none" placeholder="Your valid email.." required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4 row">
+                                            <label class="lg:w-1/4 text-black dark:text-white font-medium text-[0.938rem] pt-[8px] required">Ticket Category</label>
+                                            <div class="lg:w-3/4 Cms-selecter">
+                                                <div class="mb-3">
+                                                    <select class="js-example-disabled py-[20px] px-[5px]">
+                                                        <option value="AL">Alabama</option>
+                                                        <option value="WY">Wyoming</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4 row">
+                                            <label class="lg:w-1/4 text-black dark:text-white font-medium text-[0.938rem] pt-[8px] required">Ticket Description</label>
+                                            <div class="lg:w-3/4">
+                                                <div class="custom-ekeditor ct-ticket">
+                                                    <div id="ckeditor"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4 row">
+                                            <label class="lg:w-1/4 text-black dark:text-white font-medium text-[0.938rem] pt-[8px] required">Attatchment </label>
+                                            <div class="lg:w-3/4">
+                                                <div class="ticket-file">
+                                                    <form action="#" class="dropzone">
+                                                        <div class="fallback">
+                                                            <input name="file " type="file" multiple>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4 row">
+                                            <div class="lg:w-3/4 ml-auto">
+                                                <button type="submit" class="py-[0.65rem] px-5 text-[0.9375rem] text-white bg-primary rounded-lg">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--form-validation-->
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="~/Content/assets/vendor/global/global.min.js"></script>
+<!-- Dashboard 1 -->
+<script src="~/Content/assets/vendor/select2/js/select2.full.min.js"></script>
+<script src="~/Content/assets/js/plugins-init/select2-init.js"></script>
+<script src="~/Content/assets/vendor/ckeditor/ckeditor.js"></script>
+<script src="~/Content/assets/vendor/dropzone/dist/dropzone.js"></script>
+<!-- Ck-editor -->
+
+<script src="~/Content/assets/vendor/niceselect/js/jquery.nice-select.min.js"></script> <!-- nice-select -->
+<script src="~/Content/assets/vendor/powerful-calendar/calendar.min.js"></script> <!-- Date picker -->
+<script src="~/Content/assets/js/custom.js"></script>
+<script src="~/Content/assets/js/deznav-init.js"></script>
+<script src="~/Content/assets/js/demo.js"></script>
+<script src="~/Content/assets/js/styleSwitcher.js"></script>

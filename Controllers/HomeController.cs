@@ -87,5 +87,15 @@ namespace Bodh.Controllers
         {
             return View();
         }
+
+        public ActionResult BodhCredential()
+        {
+            return View();
+        }
+
+        public ActionResult Dashboard()
+        {
+            return View();
+        }
     }
 }

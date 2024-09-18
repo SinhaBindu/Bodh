@@ -582,6 +582,8 @@
     <Content Include="Views\Home\MonitoringAndEvaluation.cshtml" />
     <Content Include="Views\Home\BodhWay.cshtml" />
     <Content Include="Views\Home\Services.cshtml" />
+    <Content Include="Views\Home\BodhCredential.cshtml" />
+    <Content Include="Views\Home\dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
