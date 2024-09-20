@@ -1403,7 +1403,7 @@ ol {
 }
 .bodh-manage {
     padding: 60px 0;
-    background: #F2F2F2;
+    background: #fff;
 }
 .bodh-way {
     margin: auto;
@@ -1415,14 +1415,14 @@ ol {
         font-weight: 500
     }
     .bodh-way p, .bodh-graphic p {
-        font-size: 17px;
+        font-size: 16px;
         line-height: 30px
     }
 .bodh-graphic {
     margin: auto;
     max-width: 1160px;
     padding: 20px 20px;
-    background: #fff;
+    background: #F2F2F2;
     margin-top: 50px
 }
 .graph-list {
@@ -1454,11 +1454,12 @@ ol {
     align-items: center
 }
     .service-box h2 {
-        font-size: 30px;
-        font-weight: 400
+        font-size: 27px;
+        font-weight: 400;
+        color: #f36131;
     }
     .service-box p {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 30px;
         color: #535353
     }
