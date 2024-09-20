@@ -97,5 +97,10 @@ namespace Bodh.Controllers
         {
             return View();
         }
+
+        public ActionResult JTSP()
+        {
+            return View();
+        }
     }
 }

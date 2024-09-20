@@ -451,6 +451,20 @@
     <Content Include="Content\images\icon.png" />
     <Content Include="Content\images\ifa-supplement.jpg" />
     <Content Include="Content\images\integrative-model.png" />
+    <Content Include="Content\images\jtsp.jpg" />
+    <Content Include="Content\images\jtsp\award-1.jpg" />
+    <Content Include="Content\images\jtsp\award-2.jpg" />
+    <Content Include="Content\images\jtsp\award-3.jpg" />
+    <Content Include="Content\images\jtsp\batiyaen-sumangal-se.png" />
+    <Content Include="Content\images\jtsp\chatkar-zindagi-ke.jpg" />
+    <Content Include="Content\images\jtsp\chatkare-bhare-sawaal.jpg" />
+    <Content Include="Content\images\jtsp\sc1.jpg" />
+    <Content Include="Content\images\jtsp\sc2.jpg" />
+    <Content Include="Content\images\jtsp\sc3.jpg" />
+    <Content Include="Content\images\jtsp\sc4.jpg" />
+    <Content Include="Content\images\jtsp\sc5.jpg" />
+    <Content Include="Content\images\jtsp\sc6.jpg" />
+    <Content Include="Content\images\jtsp\sehat-ka-tadka.png" />
     <Content Include="Content\images\location.png" />
     <Content Include="Content\images\main-logo.png" />
     <Content Include="Content\images\method-bg.png" />
@@ -584,6 +598,7 @@
     <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\Home\BodhCredential.cshtml" />
     <Content Include="Views\Home\dashboard.cshtml" />
+    <Content Include="Views\Home\JTSP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
