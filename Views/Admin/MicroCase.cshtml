@@ -1,0 +1,430 @@
+﻿@model Bodh.Models.MicroCaseModel
+@using Bodh.Manager
+@{
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+    ViewBag.Title = "Blog Information";
+    var PPath = ""; var BPath = ""; var DPath = "";
+    if (Model != null)
+    {
+        if (Model.ID > 0)
+        {
+            PPath = Bodh.Models.CommonModel.GetFileUrl(Model.PhotoPath);
+            //BPath = Bodh.Models.CommonModel.GetFileUrl(Model.BannerPath);
+            //DPath = Bodh.Models.CommonModel.GetFileUrl(Model.DocumentPath);
+            //var str = Model.Date != null ? Convert.ToDateTime(Model.Date.Value.ToString("dd-MMM-yyyy")) : Model.Date;
+        }
+    }
+
+}
+
+<style>
+    .card-manage {
+        padding: 30px 15px
+    }
+
+    .input_container {
+        border: 1px solid #e5e5e5;
+    }
+
+    input[type=file]::file-selector-button {
+        background-color: #fff;
+        color: #000;
+        border: 0px;
+        border-right: 1px solid #e5e5e5;
+        padding: 10px 15px;
+        margin-right: 20px;
+        transition: .5s;
+    }
+
+        input[type=file]::file-selector-button:hover {
+            background-color: #eee;
+            border: 0px;
+            border-right: 1px solid #e5e5e5;
+        }
+</style>
+<div class="content-body">
+    <div class="container-fluid">
+        <!-- Row -->
+        <div class="page-titles dark:bg-[#1b1b1b] rounded-ss-md flex items-center justify-between relative  mb-[1.875rem] flex-wrap z-[1] py-[0.9375rem] sm:px-[0.975rem] px-[1.875rem] bg-white">
+            <h4><a href="~/Home/Index">@ViewBag.Title </a> </h4>
+            <button type="button" id="div-download"
+                    title="Click here to Download To Excel"></button>
+        </div>
+
+        <div class="row">
+            <div class="filter cm-content-box box-primary relative rounded-lg mb-4 bg-white dark:bg-[#1b1b1b]">
+                @*<div class="content-title flex justify-between items-center py-4 sm:px-6 px-[1.2rem] card-toggle-btn">
+                        <div class="cpa text-dark dark:text-white text-base font-semibold">
+                            <i class="fa-sharp fa-solid fa-filter mr-2"></i>Filter
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:void(0);" class="expand SlideToolHeader inline-block"><i class="fal fa-angle-down font-['Font_Awesome_6_Free'] font-semibold text-[#c2c2c2] text-xl arrow"></i></a>
+                        </div>
+                    </div>*@
+                <div class="content form excerpt border-t border-b-color dark:border-[#ffffff1a]">
+                    <div class="row">
+
+                        <div class="card">
+                            @using (Html.BeginForm("MicroCase", "Admin", FormMethod.Post, new { @id = "formid", @class = "", role = "form", autocomplete = "off", enctype = "multipart/form-data" }))
+                            {
+                                <div class="filter cm-content-box box-primary relative rounded-lg mb-0 bg-white dark:bg-[#1b1b1b]">
+                                    <div class="content form excerpt border-b-color dark:border-[#ffffff1a]">
+                                        <div>
+                                            <div class="border-all">
+
+                                                <div class="panel-bodys">
+                                                    <div class="col-md-12">
+                                                        <div class="position-relative form-group">
+                                                            @Html.HiddenFor(model => model.ID)
+                                                            @Html.AntiForgeryToken()
+                                                            @Html.ValidationSummary("", new { @class = "text-danger ulcl" })
+                                                            <div class="col-md-12">@Html.Partial("_Alerts")</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-4 row">
+                                                        @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label sm:w-1/6 py-[7px] text-body-color text-[0.76563rem] col-form-label-sm" })
+                                                        <div class="sm:w-5/6">
+                                                            @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "required form-control datepicker relative text-[13px] text-body-color h-[2.813rem] border border-b-color block rounded-lg py-1.5 px-3 duration-500 outline-none w-full  ", @required = "required", @type = "text" } })
+                                                            @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-4 row">
+                                                        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label sm:w-1/6 py-[7px] text-body-color text-[0.76563rem] col-form-label-sm" })
+                                                        <div class="sm:w-5/6">
+                                                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "required form-control relative text-[13px] text-body-color h-[2.813rem] border border-b-color block rounded-lg py-1.5 px-3 duration-500 outline-none w-full ", @required = "required", @maxlength = "120" } })<em class="text-danger">*</em>
+                                                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                                                        </div>
+                                                        <div class="mark-devide"></div>
+                                                    </div>
+
+                                                    @*<div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <span class="text-danger">*</span>
+                                                                @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "" })
+                                                                @Html.TextAreaFor(model => model.Subject, new { @class = "form-control", @required = "required", @rows = "2", @cols = "10" })
+                                                                @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                                                            </div>
+                                                        </div>*@
+                                                    <div class="mb-4 row">
+                                                        @Html.LabelFor(model => model.Photo, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        <div class="sm:w-5/6">
+                                                            <div class="input_container">
+                                                                @Html.TextBoxFor(m => m.Photo, new { @class = "relative text-[13px] h-[2.813rem] file:h-[2.813rem] file:outline-none file:text-body-color file:py-[0.175rem] file:pl-2.5 file:pr-3 file:bg-[#f8f9fa] dark:file:bg-[#1b1b1b]  border border-b-color file:border-b-color block rounded-lg text-body-color duration-500 outline-none w-full", @title = "Upload Document", @type = "file", accept = "image/png, image/jpeg,image/jpg",onchange= "ImageUploadSize('Photo',this);" })
+                                                                @if (!string.IsNullOrWhiteSpace(PPath))
+                                                                {
+                                                                    <a href="@PPath" target="_blank" id="PPath"><strong><i class="fa fa-download"></i></strong></a>
+                                                                }
+                                                            </div>
+                                                            @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })
+                                                            <em class="text-danger">*</em>
+                                                            <small class="text-danger">Maximum file size allowed for upload <b> 50 mb</b></small>
+                                                        </div>
+                                                    </div>
+
+                                                    @*<div class="col-md-4">
+                                                            <div class="position-relative form-group">
+                                                                <span class="text-danger"></span>
+                                                                <label>Profile (Image)  </label>
+                                                                <input type="file" name="Photo" id="Photo" accept="image/*" class="form-control" />
+                                                                @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })
+                                                                @if (!string.IsNullOrWhiteSpace(PPath))
+                                                                {
+                                                                    <a href="@PPath" target="_blank" id="PPath"><strong><i class="fa fa-download"></i></strong></a>
+                                                                }
+                                                            </div>
+                                                        </div>*@
+                                                    @*<div class="col-md-4">
+                                                            <div class="position-relative form-group">
+                                                                <span class="text-danger"></span>
+                                                                <label>Upload Banner (Image)  </label>
+                                                                <input type="file" name="Banner" id="Banner" accept="image/*" class="form-control" />
+                                                                @Html.ValidationMessageFor(model => model.Banner, "", new { @class = "text-danger" })
+                                                                @if (!string.IsNullOrWhiteSpace(BPath))
+                                                                {
+                                                                    <a href="@BPath" target="_blank" id="BPath"><strong><i class="fa fa-download"></i></strong></a>
+                                                                }
+                                                            </div>
+                                                        </div>*@
+                                                    @*<div class="col-md-4">
+                                                            <div class="position-relative form-group">
+                                                                <span class="text-danger"></span>
+                                                                <label>Upload Document (PDF)</label>
+                                                                <input type="file" name="Document" id="Document" accept="application/pdf" class="form-control" />
+                                                                @Html.ValidationMessageFor(model => model.Document, "", new { @class = "text-danger" })
+                                                                @if (!string.IsNullOrWhiteSpace(DPath))
+                                                                {
+                                                                    <a href="@DPath" target="_blank" id="DPath"><strong><i class="fa fa-download"></i></strong></a>
+                                                                }
+                                                            </div>
+                                                        </div>*@
+                                                    <div class="mb-4 row">
+                                                        @Html.LabelFor(model => model.URLLink, htmlAttributes: new { @class = "control-label sm:w-1/6 py-[7px] text-body-color text-[0.76563rem] col-form-label-sm" })
+                                                        <div class="sm:w-5/6">
+                                                            @Html.TextAreaFor(model => model.URLLink, new { @class = "form-control relative text-[13px] text-body-color h-[2.813rem] border border-b-color block rounded-lg py-1.5 px-3 duration-500 outline-none w-full ", @maxlength = "2000", max = "2000" })
+                                                            @*<em class="text-danger">*</em>*@
+                                                            @Html.ValidationMessageFor(model => model.URLLink, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-4 row">
+                                                        @Html.LabelFor(model => model.Writer, htmlAttributes: new { @class = "control-label sm:w-1/6 py-[7px] text-body-color text-[0.76563rem] col-form-label-sm" })
+                                                        <div class="sm:w-5/6">
+                                                            @Html.TextAreaFor(model => model.Writer, new { @class = "form-control relative text-[13px] text-body-color h-[2.813rem] border border-b-color block rounded-lg py-1.5 px-3 duration-500 outline-none w-full ", @maxlength = "2000",max="2000" })
+                                                            @*<em class="text-danger">*</em>*@
+                                                            @Html.ValidationMessageFor(model => model.Writer, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mb-4 row">
+                                                        <div class="col-md-10">
+                                                            <span class="webshow">
+                                                                <button type="submit" class="btn btn-primary mr-1 mb-2 inline-block rounded-lg font-medium xl:text-[10px] text-xs leading-5 xl:py-[0.719rem] xl:px-[1.563rem] py-2.5 px-4 border border-primary text-white bg-primary hover:bg-hover-primary hover:border-hover-primary duration-300">Submit</button>
+                                                                <a href="~/Admin/MicroCase" class="btn btn-warning mr-1 mb-2 inline-block rounded-lg font-medium xl:text-[10px] text-xs leading-5 xl:py-[0.719rem] xl:px-[1.563rem] py-2.5 px-4 border border-warning text-white bg-warning hover:bg-hover-warning hover:border-hover-warning duration-300"><i class="fa fa-refresh"></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <div id="submission-data"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @*<script src="~/Scripts/JS/Master.js"></script>*@
+    <!-- Include Editor JS files. -->
+    @*<script src="https://cdn.tiny.cloud/1/sycl3w1d8npikolltg56dvhf7yiehfqo9a8sbnei0nokfddz/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>*@
+    @*<script src="https://cdn.tiny.cloud/1/4vv1zgyc50xd1ejbej3jkdy689m6pujcjrr6elpp8lowqxz4/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>*@
+
+    @*<script src="https://cdn.tiny.cloud/1/7gu1vcvlkyin1hekdxcrd3pyzmiisyp0zu3e19ml3uls7rdq/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>*@
+
+
+    <script>
+
+        //new FroalaEditor('textarea#froala-editor');
+        //new FroalaEditor('textarea#froala-editor', {
+        //    heightMin: 800,
+        //    heightMax: 1000
+        //})
+
+    $(function () {
+
+        $('#Date').datepicker({
+            dateFormat: 'dd-M-yy',
+            changeMonth: true,
+            changeYear: true
+        });
+
+           // LoadEditor();
+            BindData();
+
+        if ('@Model' != 'null') {
+            if ('@Model.ID' != '' && '@Model.ID' != '0') {
+                $("#Date").val(moment('@Model.Date').format("DD-MMM-YYYY"));
+            }
+        }
+        else {
+            ClearInput();
+        }
+       
+
+            /* Started Submitted Tab */
+            $("#formid").on("submit", function (event) {
+                event.preventDefault();
+                debugger;
+                //var isvalid = $("#formid").valid();
+                var isvalid = false;
+                //var formData = $(this).serialize();
+                const formData = new FormData();
+                //if (tinymce.EditorManager.get('HtmlEditor').getContent() === '') {
+                //    toastr.error("Case Studies Description", "Case studies description can not be empty.", "error");
+                //    isvalid = false; return false;
+                //}
+                formData.append('ID', '@Model.ID');
+                //if ($('#Subject').val() === '' || $('#Category').val() === '' || $('#Date').val() === '') {
+                //    isvalid = false; return false;
+                //}
+                jQuery.event.trigger("ajaxStart");
+                if ($('#Date').val() != '') {
+                    formData.append('Date', $('#Date').val());
+                    isvalid = true;
+                }
+                if ($('#Title').val() != '') {
+                    formData.append('Title', $('#Title').val());
+                    isvalid = true;
+                }
+                //if ($('#Subject').val() != '') {
+                //    formData.append('Subject', $('#Subject').val());
+                //}
+                //if ($('#Category').val() != '') {
+                //    formData.append('Category', $('#Category').val());
+                //}
+                if ($('#URLLink').val() != '') {
+                    formData.append('URLLink', $('#URLLink').val());
+                    isvalid = true;
+                }
+                if ($('#Writer').val() != '') {
+                    formData.append('Writer', $('#Writer').val());
+                    isvalid = true;
+                }
+                //if (tinymce.EditorManager.get('HtmlEditor').getContent() != '') {
+                //    //var htmlEditor=tinymce.EditorManager.get('HtmlEditor').getContent();
+                //    let content = tinymce.get("HtmlEditor").getContent();
+                //    //$("textarea[name=HtmlEditor]").val(content);
+                //    formData.append('HtmlEditor', content);
+                //}
+                //if ($('#Banner').get(0).files.length != 0) {
+                //    formData.append('Banner', $('#Banner')[0].files[0]);
+                //}
+                if ($('#Photo').get(0).files.length != 0) {
+                    formData.append('Photo', $('#Photo')[0].files[0]);
+                    isvalid = true;
+                }
+                //if ($('#Document').get(0).files.length != 0) {
+                //    formData.append('Document', $('#Document')[0].files[0]);
+                //}
+
+                if (isvalid) {
+                    $.ajax({
+                        type: "POST",
+                        url: document.baseURI + "/Admin/MicroCase/",
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function (resp) {
+                            if (resp.StatusType == "success") {
+                                toastr.success("Success", resp.Message);
+                                jQuery.event.trigger("ajaxStop");
+                                ClearInput();
+                                BindData();
+                                var url = '@Url.Action("MicroCase", "Admin")';
+                                window.location.href = url;
+                            }
+                        },
+                        error: function (req, error) {
+                            if (error === 'error') { error = req.statusText; }
+                            var errormsg = 'There was a communication error: ' + error;
+                            // CreateToasterMessage("Error", errormsg, "error");
+                            toastr.error("Error", errormsg);
+                            jQuery.event.trigger("ajaxStop");
+                            return false;
+                        }
+                    });
+                }
+                else {
+                    //CreateToasterMessage("Error", "All Record Validate !!", "error");
+                    toastr.error("Error", "All Record Validate !!");
+                    jQuery.event.trigger("ajaxStop");
+                    return false;
+                }
+            });/*End Submitted Closed Tab  */
+
+            function BindData() {
+                jQuery.event.trigger("ajaxStart");
+                $('#submission-data').removeClass("text-danger");
+                var url = $('#submission-form').attr("action");
+                var formData = $('#submission-form').serialize();
+                $.ajax({
+                    url: document.baseURI + "/Admin/GetMicroCase/",
+                    type: "Post",
+                    data: '',//{ 'District': District, 'Block': Block },
+                    success: function (resp) {
+                        if (resp.IsSuccess) {
+                            jQuery.event.trigger("ajaxStop");
+                            $('#submission-data').html(resp.Data);
+                            if ($.fn.dataTable.isDataTable('#DataList')) {
+                                $("#DataList").dataTable().fnDestroy();
+                            }
+                            table = $('#DataList').DataTable({
+                                //scrollY: "400px",
+                                //scrollX: true,
+                                //scrollCollapse: true,
+                                //paging: false,
+                                pageLength: 25,
+                                fixedColumns: {
+                                    leftColumns: 1,
+                                    rightColumns: 1
+                                },
+                                buttons: [{
+                                    extend: 'excel', text: '<span><i class="fa fa-download"></i>Export</span>', title: 'User Lists',//$('#IDDistrict option:selected').text() +
+                                    className: 'btn btn-primary button-icon mr-3 mt-1 mb-1',
+                                    filename: 'User List',
+                                    exportOptions: { modifier: { page: 'all' } }
+                                }],
+                            });
+                            $('.dataTables_filter input[type="search"]').css(
+                                { 'width': '500px', 'display': 'inline-block' }
+                            );
+                            $('#div-download').empty();
+                            //table.buttons().container().appendTo($('#div-download'));
+                        }
+                        else {
+                            $('#submission-data').html("Record Not Found !!");//TO DO
+                            $('#submission-data').addClass("text-danger");//TO DO
+                        }
+                    },
+                    error: function (req, error) {
+                        if (error === 'error') { error = req.statusText; }
+                        var errormsg = 'There was a communication error: ' + error;
+                        $('#submission-data').html(errormsg);
+                        jQuery.event.trigger("ajaxStop");
+                        return false;
+                    }
+                });
+            }
+
+        });
+
+        function LoadEditor() {
+            tinymce.init({
+                selector: '#HtmlEditor',
+                plugins: 'a11ychecker advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+                toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter pageembed permanentpen table tableofcontents',
+                toolbar_mode: 'floating',
+                tinycomments_mode: 'embedded',
+                tinycomments_author: 'Author name',
+                //codesample_global_prismjs: true
+                //paste_data_images: false,
+                smart_paste: false,
+            });
+            tinymce.init({
+                selector: '#HtmlEditor',
+                plugins: 'a11ychecker advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+                toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter pageembed permanentpen table tableofcontents',
+                toolbar_mode: 'floating',
+                tinycomments_mode: 'embedded',
+                tinycomments_author: 'Author name',
+                //codesample_global_prismjs: true
+
+            });
+        }
+        function ClearInput() {
+            $('#Date').val('');
+            $('#Title').val('');
+            $('#URLLink').val('');
+            $('#Writer').val('');
+            $('#Photo').val('');
+            $('#PPath').attr('href','');
+            //$('#BPath').attr('href', '');
+            //$('#PPath').css('display', 'none');
+            //$('#BPath').css('display', 'none');
+            //var content = "";
+            //tinymce.get("HtmlEditor").setContent(content);
+        }
+
+    </script>
+
+}

@@ -1,5 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    Bodh.Models.Bodh_DBEntities db = new Bodh.Models.Bodh_DBEntities();
+    var bloglist = db.tbl_MicroCase.ToList();
 }
 <style>
     .active1 {
@@ -24,45 +26,45 @@
 </div>
 <!-- Work -->
 @*<div class="grey-bg">
-    <div class="work-area">
-        <h2>Our Area of Works</h2>
-        <div class="work-box">
-            <div class="work-content">
-                <div class="boxed" data-aos="fade-up" data-aos-duration="3000">
-                    <span>
-                        <img src="~/Content/images/child.png" alt="Child Development" />
-                    </span>
-                    <h3>
-                        Formative Research and Behavioural Barrier Identification
-                    </h3>
+        <div class="work-area">
+            <h2>Our Area of Works</h2>
+            <div class="work-box">
+                <div class="work-content">
+                    <div class="boxed" data-aos="fade-up" data-aos-duration="3000">
+                        <span>
+                            <img src="~/Content/images/child.png" alt="Child Development" />
+                        </span>
+                        <h3>
+                            Formative Research and Behavioural Barrier Identification
+                        </h3>
+                    </div>
+                    <div class="boxed" data-aos="fade-up" data-aos-duration="3000">
+                        <span>
+                            <img src="~/Content/images/adolescent.png" alt="Child Development" />
+                        </span>
+                        <h3>
+                            Designing and Testing of Messages and Materials
+                        </h3>
+                    </div>
+                    <div class="boxed" data-aos="fade-up" data-aos-duration="3000">
+                        <span>
+                            <img src="~/Content/images/adult.png" alt="Child Development" />
+                        </span>
+                        <h3>Solution Testing</h3>
+                    </div>
+                    <div class="boxed" data-aos="fade-up" data-aos-duration="3000">
+                        <span>
+                            <img src="~/Content/images/healthy.png" alt="Child Development" />
+                        </span>
+                        <h3>Designing and implementation of SBC campaigns</h3>
+                    </div>
                 </div>
-                <div class="boxed" data-aos="fade-up" data-aos-duration="3000">
-                    <span>
-                        <img src="~/Content/images/adolescent.png" alt="Child Development" />
-                    </span>
-                    <h3>
-                        Designing and Testing of Messages and Materials
-                    </h3>
+                <div class="work-photo" data-aos="fade-down" data-aos-duration="3000">
+                    <img src="~/Content/images/work-area.png" alt="Area of Work" />
                 </div>
-                <div class="boxed" data-aos="fade-up" data-aos-duration="3000">
-                    <span>
-                        <img src="~/Content/images/adult.png" alt="Child Development" />
-                    </span>
-                    <h3>Solution Testing</h3>
-                </div>
-                <div class="boxed" data-aos="fade-up" data-aos-duration="3000">
-                    <span>
-                        <img src="~/Content/images/healthy.png" alt="Child Development" />
-                    </span>
-                    <h3>Designing and implementation of SBC campaigns</h3>
-                </div>
-            </div>
-            <div class="work-photo" data-aos="fade-down" data-aos-duration="3000">
-                <img src="~/Content/images/work-area.png" alt="Area of Work" />
             </div>
         </div>
-    </div>
-</div>*@
+    </div>*@
 <!-- Methodology -->
 <div class="method-section">
     <h2>Our Process</h2>
@@ -72,89 +74,89 @@
         <div class="content-design">
             <div class="" data-aos="fade-up" data-aos-duration="3000">
                 <p><span class="highlight">PRISM®</span> allows us to understand the barriers that prevent our project segments from adopting desired behaviours, and the attitudes, beliefs and norms that drive those barriers. We leverage  principles of behavioural science and human centered design to co-create with diverse stakeholders, effective solutions that have their input and have been tested for feasibility, effectiveness and replicability.</p>
-            </div>            
+            </div>
             <div class="prism-data" data-aos="fade-up" data-aos-duration="3000">
-            <p>We have successfully used this model to develop, test, refine, implement and evaluate award-winning communication, digital and service delivery interventions for projects focusing on Health and Nutrition, Family Planning, Gender, Livelihoods and Climate Change.</p>
+                <p>We have successfully used this model to develop, test, refine, implement and evaluate award-winning communication, digital and service delivery interventions for projects focusing on Health and Nutrition, Family Planning, Gender, Livelihoods and Climate Change.</p>
             </div>
         </div>
         @*<img src="~/Content/images/original-left.png" alt="" class="process-img" data-aos="fade-left" data-aos-duration="3000" />
-        <img src="~/Content/images/arrow.png" alt="" class="process-arrow" data-aos="fade-left" data-aos-duration="3000" />
-        <img src="~/Content/images/Middle.png" alt="" class="process-img process-mar-top process-mar-left" data-aos="fade-left" data-aos-duration="3000" />
-        <img src="~/Content/images/arrow.png" alt="" class="process-arrow" data-aos="fade-left" data-aos-duration="3000" />
-        <img src="~/Content/images/right.png" alt="" class="process-img process-mar-left" data-aos="fade-left" data-aos-duration="3000" />*@
+            <img src="~/Content/images/arrow.png" alt="" class="process-arrow" data-aos="fade-left" data-aos-duration="3000" />
+            <img src="~/Content/images/Middle.png" alt="" class="process-img process-mar-top process-mar-left" data-aos="fade-left" data-aos-duration="3000" />
+            <img src="~/Content/images/arrow.png" alt="" class="process-arrow" data-aos="fade-left" data-aos-duration="3000" />
+            <img src="~/Content/images/right.png" alt="" class="process-img process-mar-left" data-aos="fade-left" data-aos-duration="3000" />*@
     </div>
     @*<div class="methodology">
-        <div class="method-content">
-            <div class="method-box box-arrange2" data-aos="fade-up" data-aos-duration="3000">
-                <span><img src="~/Content/images/diagnose.png" alt="Define" /></span>
-                <h3>Define</h3>
-                <p>
-                    We deep dive to understand the real reason behind behaviours.
-                </p>
+            <div class="method-content">
+                <div class="method-box box-arrange2" data-aos="fade-up" data-aos-duration="3000">
+                    <span><img src="~/Content/images/diagnose.png" alt="Define" /></span>
+                    <h3>Define</h3>
+                    <p>
+                        We deep dive to understand the real reason behind behaviours.
+                    </p>
+                </div>
+                <div class="method-box box-arrange1" data-aos="fade-up" data-aos-duration="3000">
+                    <span><img src="~/Content/images/design.png" alt="Design and test" /></span>
+                    <h3>Design and test</h3>
+                    <p>
+                        We brainstorm with communities to design solutions to overcome the identified hurdles. We then test these co-created solutions with a small group, gathering feedback to refine them for maximum impact.
+                    </p>
+                </div>
+                <div class="method-box box-arrange3" data-aos="fade-up" data-aos-duration="3000">
+                    <span><img src="~/Content/images/define.png" alt="Apply" /></span>
+                    <h3>Apply</h3>
+                    <p>
+                        We launch the optimised intervention on a larger scale, monitoring impact and adapting as needed.
+                    </p>
+                </div>
             </div>
-            <div class="method-box box-arrange1" data-aos="fade-up" data-aos-duration="3000">
-                <span><img src="~/Content/images/design.png" alt="Design and test" /></span>
-                <h3>Design and test</h3>
-                <p>
-                    We brainstorm with communities to design solutions to overcome the identified hurdles. We then test these co-created solutions with a small group, gathering feedback to refine them for maximum impact.
-                </p>
-            </div>
-            <div class="method-box box-arrange3" data-aos="fade-up" data-aos-duration="3000">
-                <span><img src="~/Content/images/define.png" alt="Apply" /></span>
-                <h3>Apply</h3>
-                <p>
-                    We launch the optimised intervention on a larger scale, monitoring impact and adapting as needed.
-                </p>
-            </div>
-        </div>
-    </div>*@
-    
+        </div>*@
+
 </div>
 <!-- Journey -->
 @*<div class="journey-section">
-    <div class="client-list">
-        <h2 data-aos="fade-up" data-aos-duration="3000">
-            Our journey starts at a commitment
-            and ends at a progress.
-        </h2>
-        <h3>
-            <span class="left-line" data-aos="fade-up" data-aos-duration="3000"></span>Our Clients<span class="right-line"></span>
-        </h3>
-        <div class="client-logo" data-aos="fade-up" data-aos-duration="3000">
-            <div><img src="~/Content/images/client/amazon.png" alt="amazon"> </div>
-            <div><img src="~/Content/images/client/amdocs 1.png" alt=""> </div>
-            <div><img src="~/Content/images/client/bajaj-finserv.png" alt=""> </div>
+        <div class="client-list">
+            <h2 data-aos="fade-up" data-aos-duration="3000">
+                Our journey starts at a commitment
+                and ends at a progress.
+            </h2>
+            <h3>
+                <span class="left-line" data-aos="fade-up" data-aos-duration="3000"></span>Our Clients<span class="right-line"></span>
+            </h3>
+            <div class="client-logo" data-aos="fade-up" data-aos-duration="3000">
+                <div><img src="~/Content/images/client/amazon.png" alt="amazon"> </div>
+                <div><img src="~/Content/images/client/amdocs 1.png" alt=""> </div>
+                <div><img src="~/Content/images/client/bajaj-finserv.png" alt=""> </div>
+            </div>
+            <div class="client-logo" data-aos="fade-up" data-aos-duration="3000">
+                <div><img src="~/Content/images/client/flipkart.png" alt=""> </div>
+                <div><img src="~/Content/images/client/glance.png" alt=""> </div>
+                <div><img src="~/Content/images/client/raymond.png" alt=""> </div>
+            </div>
+            <div class="client-logo" data-aos="fade-up" data-aos-duration="3000">
+                <div><img src="~/Content/images/client/sbi-life.png" alt=""> </div>
+                <div><img src="~/Content/images/client/tech-mahindra.png" alt=""> </div>
+                <div><img src="~/Content/images/client/viacom18.png" alt=""> </div>
+            </div>
         </div>
-        <div class="client-logo" data-aos="fade-up" data-aos-duration="3000">
-            <div><img src="~/Content/images/client/flipkart.png" alt=""> </div>
-            <div><img src="~/Content/images/client/glance.png" alt=""> </div>
-            <div><img src="~/Content/images/client/raymond.png" alt=""> </div>
+        <div class="journey-data">
+            <div class="round-data size5" data-aos="fade-down" data-aos-duration="3000">
+                <h4>15+</h4>
+                <p>States in India</p>
+            </div>
+            <div class="round-data size4" data-aos="fade-down" data-aos-duration="3000">
+                <h4>20+</h4>
+                <p>Global Clients</p>
+            </div>
+            <div class="round-data size3" data-aos="fade-down" data-aos-duration="3000">
+                <h4>10+</h4>
+                <p>Working Projects</p>
+            </div>
+            <div class="round-data size2" data-aos="fade-down" data-aos-duration="3000">
+            </div>
+            <div class="round-data size1" data-aos="fade-down" data-aos-duration="3000">
+            </div>
         </div>
-        <div class="client-logo" data-aos="fade-up" data-aos-duration="3000">
-            <div><img src="~/Content/images/client/sbi-life.png" alt=""> </div>
-            <div><img src="~/Content/images/client/tech-mahindra.png" alt=""> </div>
-            <div><img src="~/Content/images/client/viacom18.png" alt=""> </div>
-        </div>
-    </div>
-    <div class="journey-data">
-        <div class="round-data size5" data-aos="fade-down" data-aos-duration="3000">
-            <h4>15+</h4>
-            <p>States in India</p>
-        </div>
-        <div class="round-data size4" data-aos="fade-down" data-aos-duration="3000">
-            <h4>20+</h4>
-            <p>Global Clients</p>
-        </div>
-        <div class="round-data size3" data-aos="fade-down" data-aos-duration="3000">
-            <h4>10+</h4>
-            <p>Working Projects</p>
-        </div>
-        <div class="round-data size2" data-aos="fade-down" data-aos-duration="3000">
-        </div>
-        <div class="round-data size1" data-aos="fade-down" data-aos-duration="3000">
-        </div>
-    </div>
-</div>*@
+    </div>*@
 <!-- Blog -->
 <div class="recent-blog">
     <div class="blog">
@@ -162,66 +164,93 @@
         <div class="product_slider3" data-aos="fade-down" data-aos-duration="3000">
             <div class="amazingcarousel-list-container">
                 <ul class="amazingcarousel-list">
-                    <li class="amazingcarousel-item">
-                        <div class="amazingcarousel-item-container">
-                            <div class="post-tag">
-                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7179385916371730432" target="_blank">
-                                    <img src="~/Content/images/blog1.png" alt="Human Beings - Rational or Boundedly Rational?" class="blog-img" />
-                                </a>
-                                <h3>
-                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7179385916371730432" target="_blank">Human Beings - Rational or Boundedly Rational?</a>
-                                </h3>
-                                <p>
-                                    The first post of this knowledge sharing platform Bodh-Sambodh is dedicated to Daniel Kahneman who passed away yesterday at the age of 90 years – a life well lived and utilized.
-                                </p>
+                    @if (bloglist != null)
+                    {
+                        foreach (var item in bloglist.OrderByDescending(x => x.Date).Take(5).ToList())
+                        {
+                            var PPath = Bodh.Models.CommonModel.GetFileUrl(item.PhotoPath);
+                            string dtdate = Bodh.Models.CommonModel.FormateDtDMY(item.Date.Value.ToString());
+                            <li class="amazingcarousel-item">
+                                <div class="amazingcarousel-item-container">
+                                    <div class="post-tag">
+                                        <a href="@item.URLLink" target="_blank">
+                                            <img src="@PPath" class="blog-img" />
+                                        </a>
+                                        <h3>
+                                            <a href="@item.URLLink" target="_blank">@item.Title</a>
+                                        </h3>
+                                        <p>
+                                            @item.Writer
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            @*<li class="amazingcarousel-item">
+                                <div class="amazingcarousel-item-container">
+                                    <div class="post-tag">
+                                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7198923460050370560/" target="_blank">
+                                            <img src="~/Content/images/blog2.jpg" alt="Behavioral Biases" class="blog-img" />
+                                        </a>
+                                        <h3>
+                                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7198923460050370560/" target="_blank">Behavioral Biases</a>
+                                        </h3>
+                                        <p>
+                                            Behavioral Economics has ended the debate whether human beings make rational choices to maximize the benefits or sub-optimal choices to satisfice.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>*@
+                        }
+                    }
+                    else
+                    {
+                        <li class="amazingcarousel-item">
+                            <div class="amazingcarousel-item-container">
+                                <div class="post-tag">
+                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7198923460050370560/" target="_blank">
+                                        <img src="~/Content/images/blog2.jpg" alt="Behavioral Biases" class="blog-img" />
+                                    </a>
+                                    <h3>
+                                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7198923460050370560/" target="_blank">Behavioral Biases</a>
+                                    </h3>
+                                    <p>
+                                        Behavioral Economics has ended the debate whether human beings make rational choices to maximize the benefits or sub-optimal choices to satisfice.
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <li class="amazingcarousel-item">
-                        <div class="amazingcarousel-item-container">
-                            <div class="post-tag">
-                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7198923460050370560/" target="_blank">
-                                    <img src="~/Content/images/blog2.jpg" alt="Behavioral Biases" class="blog-img" />
-                                </a>
-                                <h3>
-                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7198923460050370560/" target="_blank">Behavioral Biases</a>
-                                </h3>
-                                <p>
-                                    Behavioral Economics has ended the debate whether human beings make rational choices to maximize the benefits or sub-optimal choices to satisfice.
-                                </p>
+                        </li>
+                        <li class="amazingcarousel-item">
+                            <div class="amazingcarousel-item-container">
+                                <div class="post-tag">
+                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7179385916371730432" target="_blank">
+                                        <img src="~/Content/images/blog1.png" alt="Human Beings - Rational or Boundedly Rational?" class="blog-img" />
+                                    </a>
+                                    <h3>
+                                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7179385916371730432" target="_blank">Human Beings - Rational or Boundedly Rational?</a>
+                                    </h3>
+                                    <p>
+                                        The first post of this knowledge sharing platform Bodh-Sambodh is dedicated to Daniel Kahneman who passed away yesterday at the age of 90 years – a life well lived and utilized.
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <li class="amazingcarousel-item">
-                        <div class="amazingcarousel-item-container">
-                            <div class="post-tag">
-                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7179385916371730432" target="_blank">
-                                    <img src="~/Content/images/blog1.png" alt="Human Beings - Rational or Boundedly Rational?" class="blog-img" />
-                                </a>
-                                <h3>
-                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7179385916371730432" target="_blank">Human Beings - Rational or Boundedly Rational?</a>
-                                </h3>
-                                <p>
-                                    The first post of this knowledge sharing platform Bodh-Sambodh is dedicated to Daniel Kahneman who passed away yesterday at the age of 90 years – a life well lived and utilized.
-                                </p>
+                        </li>
+                        <li class="amazingcarousel-item">
+                            <div class="amazingcarousel-item-container">
+                                <div class="post-tag">
+                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7198923460050370560/" target="_blank">
+                                        <img src="~/Content/images/blog2.jpg" alt="Behavioral Biases" class="blog-img" />
+                                    </a>
+                                    <h3>
+                                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7198923460050370560/" target="_blank">Behavioral Biases</a>
+                                    </h3>
+                                    <p>
+                                        Behavioral Economics has ended the debate whether human beings make rational choices to maximize the benefits or sub-optimal choices to satisfice.
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <li class="amazingcarousel-item">
-                        <div class="amazingcarousel-item-container">
-                            <div class="post-tag">
-                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7198923460050370560/" target="_blank">
-                                    <img src="~/Content/images/blog2.jpg" alt="Behavioral Biases" class="blog-img" />
-                                </a>
-                                <h3>
-                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7198923460050370560/" target="_blank">Behavioral Biases</a>
-                                </h3>
-                                <p>
-                                    Behavioral Economics has ended the debate whether human beings make rational choices to maximize the benefits or sub-optimal choices to satisfice.
-                                </p>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    }
                 </ul>
                 <div class="amazingcarousel-prev"></div>
                 <div class="amazingcarousel-next"></div>

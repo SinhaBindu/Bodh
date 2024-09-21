@@ -1,0 +1,938 @@
+﻿@using System.Data
+@{
+    ViewBag.Title = "Dashboard";
+    DataSet ds = Bodh.Models.SP_Model.SP_Dashboard();
+    DataTable dtblog = new DataTable();
+    DataTable dtresu = new DataTable();
+    DataTable dtinquery = new DataTable();
+}
+<div class="content-body">
+    <div class="container-fluid">
+        <!-- Row -->
+        <div class="page-titles dark:bg-[#1b1b1b] rounded-lg flex items-center justify-between relative  mb-[1.875rem] flex-wrap z-[1] py-[0.9375rem] sm:px-[0.975rem] px-[1.875rem] bg-white">
+            <ol class="text-[0.875rem] flex items-center flex-wrap bg-transparent">
+                <li>
+                    <a href="javascript:void(0)" class="text-[#828690] dark:text-white text-[0.875rem]">
+                        @ViewBag.Title
+                    </a>
+                </li>
+                @*<li class="pl-2 before:content-['/'] before:font-[simple-line-icons] before:font-black before:text-xl before:leading-4 before:pr-2 before:float-left before:text-primary font-semibold"><a href="javascript:void(0)" class="text-primary "></a></li>
+                <a href="javascript:void(0)" class="text-primary ">
+                </a>*@
+            </ol>
+            @*<a href="javascript:void(0)" class="text-primary ">
+            </a>*@
+        </div>
+        <div class="row">
+            @if (ds.Tables.Count > 0)
+            {
+                dtblog = ds.Tables[0];
+                dtresu = ds.Tables[1];
+                dtinquery = ds.Tables[2];
+                if (dtblog.Rows.Count > 0)
+                {
+                    <div class="xl:w-1/3 lg:w-1/2 sm:w-1/2">
+                        <a href="~/Admin/MicroCase" target="_blank">
+
+                            <div class="widget-stat card bg-primary">
+                                <div class="sm:p-6 p-4">
+                                    <div class="media flex items-center">
+                                        <span class="mr-4  text-white bg-[#ffffff40] w-[5.3125rem] h-[5.3125rem] flex items-center justify-center rounded-full">
+                                            <i class="la la-blog text-[2rem]"></i>
+                                        </span>
+                                        <div class="media-body text-white flex-1">
+                                            <p class="mb-1 uppercase text-sm font-medium text-white">Total Blogs</p>
+                                            <h3 class="text-white sm:text-[2.5rem] text-[2.25rem] leading-[1.2]">@dtblog.Rows[0]["NoofData"]</h3>
+                                            @*<div class="progress mb-2 h-[5px] overflow-hidden bg-[#ffffff40] rounded-md flex">
+                                            <div class="progress-bar animate-myanimation whitespace-nowrap rounded-md bg-white" style="width: 80%"></div>
+                                        </div>*@
+                                            @*<small>@dtblog.Rows[0]["NoofData"]</small>*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+                if (dtresu.Rows.Count > 0)
+                {
+                    <div class="xl:w-1/3 lg:w-1/2 sm:w-1/2">
+                        <a href="~/Resource/Index" target="_blank">
+                            <div class="widget-stat card bg-warning">
+                                <div class="sm:p-6 p-4">
+                                    <div class="media flex items-center">
+                                        <span class="mr-4 bgl-warning text-white bg-[#ffffff40] w-[5.3125rem] h-[5.3125rem] flex items-center justify-center rounded-full">
+                                            <i class="la la-file text-[2rem]"></i>
+                                        </span>
+                                        <div class="media-body text-white flex-1">
+                                            <p class="mb-1 uppercase text-sm font-medium text-white">Total Resource</p>
+                                            <h3 class="text-white sm:text-[2.5rem] text-[2.25rem] leading-[1.2]">@dtblog.Rows[0]["NoofData"]</h3>
+                                            @*<div class="progress mb-2 h-[5px] overflow-hidden bg-[#ffffff40] rounded-md flex">
+                                            <div class="progress-bar animate-myanimation whitespace-nowrap rounded-md bg-white" style="width: 50%"></div>
+                                        </div>*@
+                                            @*<small>@dtblog.Rows[0]["NoofData"]</small>*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+                if (dtinquery.Rows.Count > 0)
+                {
+                    <div class="xl:w-1/3 lg:w-1/2 sm:w-1/2">
+                        <a href="~/Admin/InqueryList" target="_blank">
+                            <div class="widget-stat card bg-secondary">
+                                <div class="sm:p-6 p-4">
+                                    <div class="media flex items-center">
+                                        <span class="mr-4 bgl-danger text-white bg-[#ffffff40] w-[5.3125rem] h-[5.3125rem] flex items-center justify-center rounded-full">
+                                            <i class="la la-question-circle text-[2rem]"></i>
+                                        </span>
+                                        <div class="media-body text-white flex-1">
+                                            <p class="mb-1 uppercase text-sm font-medium text-white">Total Enquiry</p>
+                                            <h3 class="text-white sm:text-[2.5rem] text-[2.25rem] leading-[1.2]">@dtblog.Rows[0]["NoofData"]</h3>
+                                            @*<div class="progress mb-2 h-[5px] overflow-hidden bg-[#ffffff40] rounded-md flex">
+                                            <div class="progress-bar animate-myanimation whitespace-nowrap rounded-md bg-white" style="width: 76%"></div>
+                                        </div>*@
+                                            @*<small>@dtblog.Rows[0]["NoofData"]</small>*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+                @*<div class="xl:w-1/4 lg:w-1/2 sm:w-1/2">
+                <div class="widget-stat card bg-danger ">
+                    <div class="sm:p-6 p-4">
+                        <div class="media flex items-center">
+                            <span class="mr-4 bgl-success text-white bg-[#ffffff40] w-[5.3125rem] h-[5.3125rem] flex items-center justify-center rounded-full">
+                                <i class="la la-dollar text-[2rem]"></i>
+                            </span>
+                            <div class="media-body text-white flex-1">
+                                <p class="mb-1 uppercase text-sm font-medium text-white">Fees Collect</p>
+                                <h3 class="text-white sm:text-[2.5rem] text-[2.25rem] leading-[1.2]">250$</h3>
+                                <div class="progress mb-2 h-[5px] overflow-hidden bg-[#ffffff40] rounded-md flex">
+                                    <div class="progress-bar animate-myanimation whitespace-nowrap rounded-md bg-white" style="width: 30%"></div>
+                                </div>
+                                <small>30% Increase in 30 Days</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+            }
+
+            @*<div class="col-xxl-12 w-full">
+            <div class="card">
+                <div class="card-header flex flex-wrap justify-between items-center sm:p-5 sm:pt-6 p-4 pt-5 max-sm:pb-5 relative border-b border-[#E6E6E6] dark:border-[#ffffff1a]">
+                    <h4 class="card-title  capitalize">Recent Payments Queue</h4>
+                </div>
+                <div class="p-[1.875rem] max-sm:p-4">
+                    <div class="overflow-x-auto recentOrderTable">
+                        <table class="table-scroll w-full overflow-hidden mb-4 min-w-[36rem]">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="py-[0.9375rem] px-2.5 text-left font-medium sm:text-base text-sm border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">Ward No.</th>
+                                    <th scope="col" class="py-[0.9375rem] px-2.5 text-left font-medium sm:text-base text-sm border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">Patient</th>
+                                    <th scope="col" class="py-[0.9375rem] px-2.5 text-left font-medium sm:text-base text-sm border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">Dr Name</th>
+                                    <th scope="col" class="py-[0.9375rem] px-2.5 text-left font-medium sm:text-base text-sm border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">Date</th>
+                                    <th scope="col" class="py-[0.9375rem] px-2.5 text-left font-medium sm:text-base text-sm border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">Status</th>
+                                    <th scope="col" class="py-[0.9375rem] px-2.5 text-left font-medium sm:text-base text-sm border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">Bills</th>
+                                    <th scope="col" class="py-[0.9375rem] px-2.5 text-right font-medium sm:text-base text-sm border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">12</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">Mr. Bobby</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">Dr. Jackson</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">01 August 2020</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal text-sm border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap"><span class="py-[0.1875rem] px-[0.8125rem] text-xs rounded-[1.25rem] leading-[1.5] text-white bg-primary inline-block border border-primary duration-500">Checkin</span></td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">$120</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-right border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">
+                                        <div class="dropdown custom-dropdown inline-block mb-0">
+                                            <div class="btn min-w-[2.4rem] p-[0.4375rem] h-[2.4rem] leading-[1.7] min-h-[2.5rem] btn-primary hover:bg-primary rounded-md text-center duration-300 dz-dropdown sharp btn-primary tp-btn" data-dz-dropdown="dropdown-26">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="12" cy="5" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="19" r="2"></circle></g></svg>
+                                            </div>
+                                            <div class="dz-dropdown-menu dropdown-menu-end absolute translate-x-[-125px] translate-y-[8px] overflow-hidden rounded-md z-[9] bg-white dark:bg-[#1b1b1b] dark:shadow-[0rem_0rem_0rem_0.0625rem_rgba(255,255,255,0.1)] shadow-[0_0_3.125rem_0_rgba(82,63,105,0.15)] min-w-[10rem] text-left py-2 hidden" id="dropdown-26">
+                                                <a class="dropdown-item py-2 px-5 text-body-color  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Details</a>
+                                                <a class="dropdown-item py-2 px-5 text-danger  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] dark:hover:bg-[#151C2C]" href="javascript:void(0);">Cancel</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">10 </td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">Mr. Dexter</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">Dr. Charles</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">31 July 2020</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal text-sm border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap"><span class="py-[0.1875rem] px-[0.8125rem] text-xs rounded-[1.25rem] text-white bg-warning leading-[1.5] inline-block border border-warning duration-500">Pending</span></td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">$540</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-right border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">
+                                        <div class="dropdown custom-dropdown inline-block mb-0">
+                                            <div class="btn min-w-[2.4rem] p-[0.4375rem] h-[2.4rem] leading-[1.7] min-h-[2.5rem] btn-primary hover:bg-primary rounded-md text-center duration-300 dz-dropdown sharp btn-primary tp-btn" data-dz-dropdown="dropdown-27">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="12" cy="5" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="19" r="2"></circle></g></svg>
+                                            </div>
+                                            <div class="dz-dropdown-menu dropdown-menu-end absolute translate-x-[-125px] translate-y-[8px] overflow-hidden rounded-md z-[9] bg-white dark:bg-[#1b1b1b] dark:shadow-[0rem_0rem_0rem_0.0625rem_rgba(255,255,255,0.1)] shadow-[0_0_3.125rem_0_rgba(82,63,105,0.15)] min-w-[10rem] text-left py-2 hidden" id="dropdown-27">
+                                                <a class="dropdown-item py-2 px-5 text-body-color  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Details</a>
+                                                <a class="dropdown-item py-2 px-5 text-danger  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] dark:hover:bg-[#151C2C]" href="javascript:void(0);">Cancel</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">03 </td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">Mr. Nathan</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">Dr. Frederick</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">30 July 2020</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal text-sm border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap"><span class="py-[0.1875rem] px-[0.8125rem] text-xs rounded-[1.25rem] text-white bg-danger leading-[1.5] inline-block border border-danger duration-500">Canceled</span></td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">$301</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-right border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">
+                                        <div class="dropdown custom-dropdown inline-block mb-0">
+                                            <div class="btn min-w-[2.4rem] p-[0.4375rem] h-[2.4rem] leading-[1.7] min-h-[2.5rem] btn-primary hover:bg-primary rounded-md text-center duration-300 dz-dropdown sharp btn-primary tp-btn" data-dz-dropdown="dropdown-28">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="12" cy="5" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="19" r="2"></circle></g></svg>
+                                            </div>
+                                            <div class="dz-dropdown-menu dropdown-menu-end absolute translate-x-[-125px] translate-y-[8px] overflow-hidden rounded-md z-[9] bg-white dark:bg-[#1b1b1b] dark:shadow-[0rem_0rem_0rem_0.0625rem_rgba(255,255,255,0.1)] shadow-[0_0_3.125rem_0_rgba(82,63,105,0.15)] min-w-[10rem] text-left py-2 hidden" id="dropdown-28">
+                                                <a class="dropdown-item py-2 px-5 text-body-color  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Details</a>
+                                                <a class="dropdown-item py-2 px-5 text-danger  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] dark:hover:bg-[#151C2C]" href="javascript:void(0);">Cancel</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">05</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">Mr. Aurora</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">Dr. Roman</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">29 July 2020</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal text-sm border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap"><span class="py-[0.1875rem] px-[0.8125rem] text-xs rounded-[1.25rem] text-white bg-success leading-[1.5] inline-block border border-success duration-500">Checkin</span></td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">$099</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-right border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">
+                                        <div class="dropdown custom-dropdown inline-block mb-0">
+                                            <div class="btn min-w-[2.4rem] p-[0.4375rem] h-[2.4rem] leading-[1.7] min-h-[2.5rem] btn-primary hover:bg-primary rounded-md text-center duration-300 dz-dropdown sharp btn-primary tp-btn" data-dz-dropdown="dropdown-29">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="12" cy="5" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="19" r="2"></circle></g></svg>
+                                            </div>
+                                            <div class="dz-dropdown-menu dropdown-menu-end absolute translate-x-[-125px] translate-y-[8px] overflow-hidden rounded-md z-[9] bg-white dark:bg-[#1b1b1b] dark:shadow-[0rem_0rem_0rem_0.0625rem_rgba(255,255,255,0.1)] shadow-[0_0_3.125rem_0_rgba(82,63,105,0.15)] min-w-[10rem] text-left py-2 hidden" id="dropdown-29">
+                                                <a class="dropdown-item py-2 px-5 text-body-color  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Details</a>
+                                                <a class="dropdown-item py-2 px-5 text-danger  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] dark:hover:bg-[#151C2C]" href="javascript:void(0);">Cancel</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">06</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">Mr. Matthew</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">Dr. Samantha</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">28 July 2020</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal text-sm border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap"><span class="py-[0.1875rem] px-[0.8125rem] text-xs rounded-[1.25rem] text-white bg-success leading-[1.5] inline-block border border-success duration-500">Checkin</span></td>
+                                    <td class="py-[0.9375rem] px-2.5 text-left font-normal sm:text-sm text-xs text-body-color border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">$520</td>
+                                    <td class="py-[0.9375rem] px-2.5 text-right border-b border-[#E6E6E6] dark:border-[#ffffff1a] dark:text-white whitespace-nowrap">
+                                        <div class="dropdown custom-dropdown inline-block mb-0">
+                                            <div class="btn min-w-[2.4rem] p-[0.4375rem] h-[2.4rem] leading-[1.7] min-h-[2.5rem] btn-primary hover:bg-primary rounded-md text-center duration-300 dz-dropdown sharp btn-primary tp-btn" data-dz-dropdown="dropdown-30">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="12" cy="5" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="19" r="2"></circle></g></svg>
+                                            </div>
+                                            <div class="dz-dropdown-menu dropdown-menu-end absolute translate-x-[-125px] translate-y-[8px] overflow-hidden rounded-md z-[9] bg-white dark:bg-[#1b1b1b] dark:shadow-[0rem_0rem_0rem_0.0625rem_rgba(255,255,255,0.1)] shadow-[0_0_3.125rem_0_rgba(82,63,105,0.15)] min-w-[10rem] text-left py-2 hidden" id="dropdown-30">
+                                                <a class="dropdown-item py-2 px-5 text-body-color  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Details</a>
+                                                <a class="dropdown-item py-2 px-5 text-danger  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] dark:hover:bg-[#151C2C]" href="javascript:void(0);">Cancel</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xl:w-1/3 lg:w-1/2 col-xxl-4 sm:w-1/2">
+            <div class="card text-white bg-primary">
+                <ul class="list-group flex flex-col list-group-flush">
+                    <li class="list-group-item flex justify-between p-4 text-sm"><span class="mb-0">Blood type :</span><strong>O+</strong></li>
+                    <li class="list-group-item flex justify-between p-4 text-sm"><span class="mb-0">Allergies :</span><strong>Penicilin, peanuts </strong></li>
+                    <li class="list-group-item flex justify-between p-4 text-sm"><span class="mb-0">Pressure :</span><strong>120/100 mmHG</strong></li>
+                    <li class="list-group-item flex justify-between p-4 text-sm"><span class="mb-0">Diseases :</span><strong>Diabetes</strong></li>
+                    <li class="list-group-item flex justify-between p-4 text-sm"><span class="mb-0">Temperture :</span><strong>34 Degree</strong></li>
+                </ul>
+            </div>
+        </div>
+        <div class="xl:w-1/3 lg:w-1/2 col-xxl-4 sm:w-1/2">
+            <div class="card text-white bg-warning">
+                <ul class="list-group flex flex-col list-group-flush">
+                    <li class="list-group-item flex justify-between p-4 text-sm"><span class="mb-0">Regular Checkups</span></li>
+                    <li class="list-group-item flex justify-between p-4 text-sm"><span class="mb-0">Dr Theodore Handle :</span><strong>Dentist</strong></li>
+                    <li class="list-group-item flex justify-between p-4 text-sm"><span class="mb-0">Dr Valentino Morose :</span><strong>Surgeon</strong></li>
+                    <li class="list-group-item flex justify-between p-4 text-sm"><span class="mb-0">Dr Fleece Marigold :</span><strong>Clinical</strong></li>
+                    <li class="list-group-item flex justify-between p-4 text-sm"><span class="mb-0">Dr Eric Widget :</span><strong>Cardiology</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="xl:w-1/3 col-xxl-4 w-full">
+            <div class="card">
+                <div class="p-[1.875rem] max-sm:p-4 text-center ai-icon  text-primary">
+                    <svg id="rocket-icon" class="my-2" viewBox="0 0 24 24" width="80" height="80" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <h4 class="my-2">You don’t have badges yet</h4>
+                    <a href="javascript:void(0);" class="btn my-2 inline-block rounded-lg font-medium xl:py-4 xl:px-6 py-3 px-5 xl:text-lg text-base border border-primary text-white bg-primary hover:bg-hover-primary hover:border-hover-primary duration-300 btn-lg"><i class="fa fa-usd"></i> Earn Budges</a>
+                </div>
+            </div>
+        </div>
+        <div class="xl:w-2/3 col-xxl-8 w-full">
+            <div class="row">
+                <div class="md:w-1/2">
+                    <div class="card">
+                        <div class="card-header flex justify-between px-5 pt-6 relative z-[2] pb-0">
+                            <div class="clearfix">
+                                <h3 class="card-title text-base">Blood pressure</h3>
+                                <span class="text-body-color dark:text-white text-sm">In the normal</span>
+                            </div>
+                            <div class="clearfix text-center">
+                                <h3 class="text-primary mb-0">120/89</h3>
+                                <span class="text-body-color dark:text-white text-sm">mmHG</span>
+                            </div>
+                        </div>
+                        <div class="p-[1.875rem] max-sm:p-4 text-center">
+                            <div class="ico-sparkline">
+                                <div id="spark-bar"><canvas width="188" height="200" style="display: inline-block; width: 188px; height: 200px; vertical-align: top;"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="card">
+                        <div class="card-header flex justify-between px-5 pt-6 relative z-[2] pb-0">
+                            <div class="clearfix">
+                                <h3 class="card-title text-base">Heart Rate</h3>
+                                <span class="text-danger text-sm">Above the normal</span>
+                            </div>
+                            <div class="clearfix text-center">
+                                <h3 class="text-danger mb-0">107</h3>
+                                <span class="text-body-color dark:text-white text-sm">Per Min</span>
+                            </div>
+                        </div>
+                        <div class="p-[1.875rem] max-sm:p-4 text-center">
+                            <div class="ico-sparkline">
+                                <div id="composite-bar"><canvas width="208" height="200" style="display: inline-block; width: 208px; height: 200px; vertical-align: top;"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="card">
+                        <div class="card-header flex justify-between px-5 pt-6 relative z-[2] pb-0">
+                            <div class="clearfix">
+                                <h3 class="card-title text-base">Glucose Rate</h3>
+                                <span class="text-body-color dark:text-white text-sm">In the normal</span>
+                            </div>
+                            <div class="clearfix text-center">
+                                <h3 class="text-success mb-0">97</h3>
+                                <span class="text-body-color dark:text-white text-sm">mg/dl</span>
+                            </div>
+                        </div>
+                        <div class="p-[1.875rem] max-sm:p-4 text-center">
+                            <div class="ico-sparkline">
+                                <div id="sparkline8"><canvas width="255" height="50" style="display: inline-block; width: 255.219px; height: 50px; vertical-align: top;"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="card">
+                        <div class="card-header flex justify-between px-5 pt-6 relative z-[2] pb-0">
+                            <div class="clearfix">
+                                <h3 class="card-title text-base">Clolesterol</h3>
+                                <span class="text-body-color dark:text-white text-sm">In the normal</span>
+                            </div>
+                            <div class="clearfix text-center">
+                                <h3 class="text-info mb-0">124</h3>
+                                <span class="text-body-color dark:text-white text-sm">mg/dl</span>
+                            </div>
+                        </div>
+                        <div class="p-[1.875rem] max-sm:p-4 text-center">
+                            <div class="ico-sparkline">
+                                <div id="sparkline9" class="height80;"><canvas width="255" height="50" style="display: inline-block; width: 255.219px; height: 50px; vertical-align: top;"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xl:w-1/3 w-full">
+            <div class="card overflow-hidden">
+                <div class="text-center p-12 relative z-[1] overlay-box" style="background-image: url(assets/images/big/img5.jpg);">
+                    <img src="assets/images/profile/profile.png" width="100" class="img-fluid rounded-full inline-block" alt="">
+                    <h3 class="mt-4 mb-0 text-white">Deangelo Sena</h3>
+                </div>
+                <div class="p-[1.875rem] max-sm:p-4">
+                    <div class="row text-center">
+                        <div class="w-1/2">
+                            <div class="bg-primary-light rounded p-4">
+                                <h4 class="mb-0">Female</h4>
+                                <small class="text-body-color max-sm:text-xs">Patient Gender</small>
+                            </div>
+                        </div>
+                        <div class="w-1/2">
+                            <div class="bg-primary-light rounded p-4">
+                                <h4 class="mb-0">Age: 24</h4>
+                                <small class="text-body-color max-sm:text-xs">Years Old</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer py-4 px-5 border-t border-[#E6E6E6] dark:border-[#ffffff1a]">
+                    <button class="block rounded-lg font-medium xl:py-4 xl:px-8 py-3 px-5 xl:text-lg text-base border border-primary text-white bg-primary hover:bg-hover-primary hover:border-hover-primary duration-300 btn-lg w-full">View Profile</button>
+                </div>
+            </div>
+        </div>
+        <div class="xl:w-1/2 lg:w-1/2  sm:w-1/2">
+            <div class="card bg-primary">
+                <div class="p-[1.875rem] max-sm:p-4 sm:pb-0 pb-0">
+                    <div class="row">
+                        <div class="flex-1">
+                            <h5 class="text-white">Power</h5>
+                            <span class="text-white max-sm:text-xs">2017.1.20</span>
+                        </div>
+                        <div class="flex-1 text-right">
+                            <h5 class="text-white"><i class="fa fa-caret-up"></i> 260</h5>
+                            <span class="text-white max-sm:text-xs">+12.5(2.8%)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="chart_widget_1" width="711" height="225" style="display: block; box-sizing: border-box; height: 150px; width: 474px;"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="xl:w-1/2 lg:w-1/2  sm:w-1/2">
+            <div class="card bg-success overflow-hidden">
+                <div class="p-[1.875rem] max-sm:p-4 sm:pb-0 pb-0">
+                    <div class="row">
+                        <div class="flex-1">
+                            <h5 class="text-white">Power</h5>
+                            <span class="text-white">2017.1.20</span>
+                        </div>
+                        <div class="flex-1 text-right">
+                            <h5 class="text-white"><i class="fa fa-caret-up"></i> 260</h5>
+                            <span class="text-white">+12.5(2.8%)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <div id="chart_widget_5"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-line" style="width: 100%; height: 100%;"><g class="ct-grids"></g><g><g class="ct-series ct-series-a"><path d="M0,150L0,66.571L67.726,45.714L135.452,118.714L203.179,24.857L270.905,4L338.631,35.286L406.357,29.029L474.083,54.057L474.083,150Z" class="ct-area"></path><path d="M0,66.571L67.726,45.714L135.452,118.714L203.179,24.857L270.905,4L338.631,35.286L406.357,29.029L474.083,54.057" class="ct-line"></path><line x1="0" y1="66.57142857142857" x2="0.01" y2="66.57142857142857" class="ct-point" ct:value="4"></line><line x1="67.72619192940849" y1="45.71428571428571" x2="67.73619192940849" y2="45.71428571428571" class="ct-point" ct:value="5"></line><line x1="135.45238385881697" y1="118.71428571428572" x2="135.46238385881696" y2="118.71428571428572" class="ct-point" ct:value="1.5"></line><line x1="203.17857578822546" y1="24.85714285714286" x2="203.18857578822545" y2="24.85714285714286" class="ct-point" ct:value="6"></line><line x1="270.90476771763394" y1="4" x2="270.91476771763394" y2="4" class="ct-point" ct:value="7"></line><line x1="338.63095964704246" y1="35.28571428571429" x2="338.64095964704245" y2="35.28571428571429" class="ct-point" ct:value="5.5"></line><line x1="406.3571515764509" y1="29.02857142857144" x2="406.3671515764509" y2="29.02857142857144" class="ct-point" ct:value="5.8"></line><line x1="474.0833435058594" y1="54.057142857142864" x2="474.09334350585937" y2="54.057142857142864" class="ct-point" ct:value="4.6"></line></g></g><g class="ct-labels"></g></svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="xl:w-1/2 lg:w-1/2  sm:w-1/2">
+            <div class="card">
+                <div class="p-[1.875rem] max-sm:p-4 sm:pb-0 pb-0">
+                    <div class="row">
+                        <div class="flex-1">
+                            <h5 class="mb-2">3650</h5>
+                            <span class="text-body-color dark:text-white text-sm">VIEWS OF YOUR PROJECT</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="chart_widget_2" width="711" height="225" style="display: block; box-sizing: border-box; height: 150px; width: 474px;"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="xl:w-1/2 lg:w-1/2  sm:w-1/2">
+            <div class="card">
+                <div class="p-[1.875rem] max-sm:p-4">
+                    <div class="row justify-between items-center">
+                        <div class="flex-1 w-auto">
+                            <h4 class="uppercase mb-2">74,206 K</h4>
+                            <span class="text-body-color dark:text-white text-sm">Lifetime earnings</span>
+                        </div>
+                        <div class="flex-1 w-auto">
+                            <div class="chart-wrapper h-[6.25rem]">
+                                <canvas id="chart_widget_7" width="450" height="131" style="display: block; box-sizing: border-box; height: 87px; width: 300px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xxl-12">
+            <div class="row">
+                <div class="md:w-1/2">
+                    <div class="card">
+                        <div class="p-[1.875rem] max-sm:p-4 sm:pb-0 pb-0">
+                            <div class="row justify-between">
+                                <div class="flex-1 w-auto">
+                                    <h5 class="mb-2">Lorem Ipsum</h5>
+                                </div>
+                                <div class="flex-1 w-auto">
+                                    <h5 class="mb-2">
+                                        <span class="text-body-color dark:text-white text-sm"><i class="fa fa-caret-up"></i></span>
+                                        <span class="text-body-color dark:text-white text-sm">2,250</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper">
+                            <div id="chart_widget_6"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-line" style="width: 100%; height: 100%;"><g class="ct-grids"></g><g><g class="ct-series ct-series-a"><path d="M0,150L0,52.667L67.726,28.333L135.452,64.833L203.179,28.333L270.905,52.667L338.631,16.167L406.357,57.533L474.083,38.067L474.083,150Z" class="ct-area"></path><path d="M0,52.667L67.726,28.333L135.452,64.833L203.179,28.333L270.905,52.667L338.631,16.167L406.357,57.533L474.083,38.067" class="ct-line"></path><line x1="0" y1="52.66666666666667" x2="0.01" y2="52.66666666666667" class="ct-point" ct:value="4"></line><line x1="67.72619192940849" y1="28.33333333333333" x2="67.73619192940849" y2="28.33333333333333" class="ct-point" ct:value="5"></line><line x1="135.45238385881697" y1="64.83333333333333" x2="135.46238385881696" y2="64.83333333333333" class="ct-point" ct:value="3.5"></line><line x1="203.17857578822546" y1="28.33333333333333" x2="203.18857578822545" y2="28.33333333333333" class="ct-point" ct:value="5"></line><line x1="270.90476771763394" y1="52.66666666666667" x2="270.91476771763394" y2="52.66666666666667" class="ct-point" ct:value="4"></line><line x1="338.63095964704246" y1="16.166666666666657" x2="338.64095964704245" y2="16.166666666666657" class="ct-point" ct:value="5.5"></line><line x1="406.3571515764509" y1="57.533333333333346" x2="406.3671515764509" y2="57.533333333333346" class="ct-point" ct:value="3.8"></line><line x1="474.0833435058594" y1="38.06666666666668" x2="474.09334350585937" y2="38.06666666666668" class="ct-point" ct:value="4.6"></line></g></g><g class="ct-labels"></g></svg></div>
+                        </div>
+                        <div class="card-footer py-4 px-5 border-t border-[#E6E6E6] dark:border-[#ffffff1a]">
+                            <div class="row">
+                                <div class="flex-1 text-center">
+                                    <h5 class="font-normal">1230</h5>
+                                    <span class="text-body-color dark:text-white text-sm">Type A</span>
+                                </div>
+                                <div class="flex-1 text-center">
+                                    <h5 class="font-normal">1230</h5>
+                                    <span class="text-body-color dark:text-white text-sm">Type A</span>
+                                </div>
+                                <div class="flex-1 text-center">
+                                    <h5 class="font-normal">1230</h5>
+                                    <span class="text-body-color dark:text-white text-sm">Type A</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="card">
+                        <div class="p-[1.875rem] max-sm:p-4 sm:pb-0 pb-0">
+                            <div class="row justify-between">
+                                <div class="flex-1 w-auto">
+                                    <h5 class="mb-2">Lorem Ipsum</h5>
+                                </div>
+                                <div class="flex-1 w-auto">
+                                    <h5 class="mb-2">
+                                        <span class="text-body-color dark:text-white text-sm"><i class="fa fa-caret-up"></i></span>
+                                        <span class="text-body-color dark:text-white text-sm">2,250</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="chart_widget_3" width="711" height="225" style="display: block; box-sizing: border-box; height: 150px; width: 474px;"></canvas>
+                        </div>
+                        <div class="card-footer py-4 px-5 border-t border-[#E6E6E6] dark:border-[#ffffff1a]">
+                            <div class="row">
+                                <div class="flex-1 text-center">
+                                    <h5 class="font-normal">1230</h5>
+                                    <span class="text-body-color dark:text-white text-sm">Type A</span>
+                                </div>
+                                <div class="flex-1 text-center">
+                                    <h5 class="font-normal">1230</h5>
+                                    <span class="text-body-color dark:text-white text-sm">Type A</span>
+                                </div>
+                                <div class="flex-1 text-center">
+                                    <h5 class="font-normal">1230</h5>
+                                    <span class="text-body-color dark:text-white text-sm">Type A</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xl:w-1/2 lg:w-1/2">
+            <div class="card overflow-hidden">
+                <div class="p-[1.875rem] max-sm:p-4 sm:pb-0 pb-0">
+                    <h4 class="card-title text-base uppercase font-normal mb-2">Market Now</h4>
+                    <h2 class="font-normal text-danger xl:text-3xl mb-2">
+                        <span><i class="fa fa-caret-up"></i></span>
+                        <span>3454664</span>
+                    </h2>
+                    <div class="row mt-12">
+                        <div class="flex-1 text-center">
+                            <h5 class="font-normal">APPL</h5>
+                            <span class="text-success">+ 82.24 %</span>
+                        </div>
+                        <div class="flex-1 text-center">
+                            <h5 class="font-normal">FB</h5>
+                            <span class="text-danger text-sm">- 12.24 %</span>
+                        </div>
+                        <div class="flex-1 text-center">
+                            <h5 class="font-normal">GOOG</h5>
+                            <span class="text-success">+ 42.24 %</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="chart_widget_4" width="711" height="225" style="display: block; box-sizing: border-box; height: 150px; width: 474px;"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="xl:w-1/2 lg:w-1/2">
+            <div class="card">
+                <div class="p-[1.875rem] max-sm:p-4 sm:pb-0 pb-0">
+                    <h4 class="card-title text-base uppercase font-normal mb-2">Sales Analysis</h4>
+                    <h2 class="font-normal text-danger xl:text-3xl mb-2">
+                        <span><i class="fa fa-caret-up"></i></span>
+                        <span>3454664</span>
+                    </h2>
+                    <div class="row mt-12">
+                        <div class="flex-1 text-center">
+                            <h5 class="font-normal">Today</h5>
+                            <span class="text-success">+ 8224</span>
+                        </div>
+                        <div class="flex-1 text-center">
+                            <h5 class="font-normal">Today</h5>
+                            <span class="text-danger text-sm">- 1224</span>
+                        </div>
+                        <div class="flex-1 text-center">
+                            <h5 class="font-normal">Week</h5>
+                            <span class="text-success">+ 4224</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <div id="chart_widget_8"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-line" style="width: 100%; height: 100%;"><g class="ct-grids"></g><g><g class="ct-series ct-series-a"><path d="M0,66.571L67.726,45.714L135.452,118.714L203.179,24.857L270.905,4L338.631,35.286L406.357,29.029L474.083,54.057" class="ct-line"></path><line x1="0" y1="66.57142857142857" x2="0.01" y2="66.57142857142857" class="ct-point" ct:value="4"></line><line x1="67.72619192940849" y1="45.71428571428571" x2="67.73619192940849" y2="45.71428571428571" class="ct-point" ct:value="5"></line><line x1="135.45238385881697" y1="118.71428571428572" x2="135.46238385881696" y2="118.71428571428572" class="ct-point" ct:value="1.5"></line><line x1="203.17857578822546" y1="24.85714285714286" x2="203.18857578822545" y2="24.85714285714286" class="ct-point" ct:value="6"></line><line x1="270.90476771763394" y1="4" x2="270.91476771763394" y2="4" class="ct-point" ct:value="7"></line><line x1="338.63095964704246" y1="35.28571428571429" x2="338.64095964704245" y2="35.28571428571429" class="ct-point" ct:value="5.5"></line><line x1="406.3571515764509" y1="29.02857142857144" x2="406.3671515764509" y2="29.02857142857144" class="ct-point" ct:value="5.8"></line><line x1="474.0833435058594" y1="54.057142857142864" x2="474.09334350585937" y2="54.057142857142864" class="ct-point" ct:value="4.6"></line></g></g><g class="ct-labels"></g></svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="xl:w-1/2 w-full">
+            <div class="card overflow-hidden">
+                <div class="card-header flex justify-between px-5 pt-6 relative z-[2] pb-0">
+                    <h4 class="card-title  capitalize">Top Products</h4>
+                </div>
+                <div class="p-[1.875rem] max-sm:p-4 sm:pb-0 pb-0">
+                    <div class="widget-media">
+                        <ul class="timeline relative">
+                            <li>
+                                <div class="timeline-panel flex items-center relative rounded-md py-[0.8rem] px-3 mx-[-5px] duration-500 hover:bg-[#0d99ff0d]">
+                                    <div class="media flex items-center justify-center w-[2.4rem] h-[2.4rem] bg-[#eee] rounded-full  text-center overflow-hidden font-semibold self-start mr-2">
+                                        <img alt="image" width="50" src="assets/images/avatar/1.jpg">
+                                    </div>
+                                    <div class="media-body flex-1">
+                                        <h5 class="mb-1 leading-6">Dr sultads Send you Photo</h5>
+                                        <small class="text-xs block mb-[0.3125rem] opacity-80 text-body-color">29 July 2020 - 02:26 PM</small>
+                                    </div>
+                                    <div class="dropdown self-end mt-[0.3125rem]">
+                                        <button type="button" class="p-[0.4375rem] w-[2.4rem] h-[2.4rem] bg-primary-light text-primary rounded-md flex justify-center items-center dz-dropdown duration-500 hover:bg-primary btn-primary light" data-dz-dropdown="dropdown-31">
+                                            <svg width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
+                                        </button>
+                                        <div class="dz-dropdown-menu dropdown-menu-end absolute translate-x-[-125px] translate-y-[8px] overflow-hidden rounded-md z-[9] bg-white dark:bg-[#1b1b1b] dark:shadow-[0rem_0rem_0rem_0.0625rem_rgba(255,255,255,0.1)] shadow-[0_0_3.125rem_0_rgba(82,63,105,0.15)] min-w-[10rem] text-left py-2 hidden" id="dropdown-31">
+                                            <a class="dropdown-item py-2 px-5 text-body-color  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Edit</a>
+                                            <a class="dropdown-item py-2 px-5 text-body-color  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-panel flex items-center relative rounded-md py-[0.8rem] px-3 mx-[-5px] duration-500 hover:bg-[#0d99ff0d]">
+                                    <div class="media flex items-center justify-center w-[2.4rem] h-[2.4rem] bg-[#eee] rounded-full  text-center overflow-hidden font-semibold self-start mr-2 media-info">
+                                        KG
+                                    </div>
+                                    <div class="media-body flex-1">
+                                        <h5 class="mb-1 leading-6">Resport created successfully</h5>
+                                        <small class="text-xs block mb-[0.3125rem] opacity-80 text-body-color">29 July 2020 - 02:26 PM</small>
+                                    </div>
+                                    <div class="dropdown self-end mt-[0.3125rem]">
+                                        <button type="button" class="btn btn-info w-[2.4rem] h-[2.4rem] p-[0.4375rem] bg-info-light text-info rounded-md flex justify-center items-center dz-dropdown duration-500 hover:bg-info light sharp" data-dz-dropdown="dropdown-32">
+                                            <svg width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
+                                        </button>
+                                        <div class="dz-dropdown-menu dropdown-menu-end absolute translate-x-[-125px] translate-y-[8px] overflow-hidden rounded-md z-[9] bg-white dark:bg-[#1b1b1b] dark:shadow-[0rem_0rem_0rem_0.0625rem_rgba(255,255,255,0.1)] shadow-[0_0_3.125rem_0_rgba(82,63,105,0.15)] min-w-[10rem] text-left py-2 hidden" id="dropdown-32">
+                                            <a class="dropdown-item py-2 px-5 text-body-color  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Edit</a>
+                                            <a class="dropdown-item py-2 px-5 text-body-color  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-panel flex items-center relative rounded-md py-[0.8rem] px-3 mx-[-5px] duration-500 hover:bg-[#0d99ff0d]">
+                                    <div class="media flex items-center justify-center w-[2.4rem] h-[2.4rem] bg-[#eee] rounded-full  text-center overflow-hidden font-semibold self-start mr-2 media-success">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <div class="media-body flex-1">
+                                        <h5 class="mb-1 leading-6">Reminder : Treatment Time!</h5>
+                                        <small class="text-xs block mb-[0.3125rem] opacity-80 text-body-color">29 July 2020 - 02:26 PM</small>
+                                    </div>
+                                    <div class="dropdown self-end mt-[0.3125rem]">
+                                        <button type="button" class="btn btn-success w-[2.4rem] h-[2.4rem] p-[0.4375rem] bg-success-light text-success rounded-md flex justify-center items-center dz-dropdown duration-500 hover:bg-success light sharp" data-dz-dropdown="dropdown-33">
+                                            <svg width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
+                                        </button>
+                                        <div class="dz-dropdown-menu dropdown-menu-end absolute translate-x-[-125px] translate-y-[8px] overflow-hidden rounded-md z-[9] bg-white dark:bg-[#1b1b1b] dark:shadow-[0rem_0rem_0rem_0.0625rem_rgba(255,255,255,0.1)] shadow-[0_0_3.125rem_0_rgba(82,63,105,0.15)] min-w-[10rem] text-left py-2 hidden" id="dropdown-33">
+                                            <a class="dropdown-item py-2 px-5 text-body-color  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Edit</a>
+                                            <a class="dropdown-item py-2 px-5 text-body-color  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="chart_widget_9" width="711" height="225" style="display: block; box-sizing: border-box; height: 150px; width: 474px;"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="xl:w-1/2 w-full">
+            <div class="card overflow-hidden">
+                <div class="card-header flex justify-between px-5 pt-6 relative z-[2] pb-0">
+                    <h4 class="card-title  capitalize">Top Products</h4>
+                </div>
+                <div class="p-[1.875rem] max-sm:p-4 sm:pb-0 pb-0">
+                    <div class="widget-media">
+                        <ul class="timeline relative">
+                            <li>
+                                <div class="timeline-panel flex items-center relative rounded-md py-[0.8rem] px-3 mx-[-5px] duration-500 hover:bg-[#0d99ff0d]">
+                                    <div class="media flex items-center justify-center w-[2.4rem] h-[2.4rem] bg-[#eee] rounded-full  text-center overflow-hidden font-semibold self-start mr-2">
+                                        <img alt="image" width="50" src="assets/images/avatar/4.jpg">
+                                    </div>
+                                    <div class="media-body flex-1">
+                                        <h5 class="mb-1 leading-6">Dr sultads Send you Photo</h5>
+                                        <small class="text-xs block mb-[0.3125rem] opacity-80 text-body-color">29 July 2020 - 02:26 PM</small>
+                                    </div>
+                                    <div class="dropdown self-end mt-[0.3125rem]">
+                                        <button type="button" class="p-[0.4375rem] w-[2.4rem] h-[2.4rem] bg-primary-light text-primary rounded-md flex justify-center items-center dz-dropdown duration-500 hover:bg-primary btn-primary light" data-dz-dropdown="dropdown-34">
+                                            <svg width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
+                                        </button>
+                                        <div class="dz-dropdown-menu dropdown-menu-end absolute translate-x-[-125px] translate-y-[8px] overflow-hidden rounded-md z-[9] bg-white dark:bg-[#1b1b1b] dark:shadow-[0rem_0rem_0rem_0.0625rem_rgba(255,255,255,0.1)] shadow-[0_0_3.125rem_0_rgba(82,63,105,0.15)] min-w-[10rem] text-left py-2 hidden" id="dropdown-34">
+                                            <a class="dropdown-item py-2 px-5 text-body-color  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Edit</a>
+                                            <a class="dropdown-item py-2 px-5 text-body-color  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-panel flex items-center relative rounded-md py-[0.8rem] px-3 mx-[-5px] duration-500 hover:bg-[#0d99ff0d]">
+                                    <div class="media flex items-center justify-center w-[2.4rem] h-[2.4rem] bg-[#eee] rounded-full  text-center overflow-hidden font-semibold self-start mr-2 media-info">
+                                        <img alt="image" width="50" src="assets/images/avatar/2.jpg">
+                                    </div>
+                                    <div class="media-body flex-1">
+                                        <h5 class="mb-1 leading-6">Resport created successfully</h5>
+                                        <small class="text-xs block mb-[0.3125rem] opacity-80 text-body-color">29 July 2020 - 02:26 PM</small>
+                                    </div>
+                                    <div class="dropdown self-end mt-[0.3125rem]">
+                                        <button type="button" class="btn btn-info w-[2.4rem] h-[2.4rem] p-[0.4375rem] bg-info-light text-info rounded-md flex justify-center items-center dz-dropdown duration-500 hover:bg-info light sharp" data-dz-dropdown="dropdown-35">
+                                            <svg width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
+                                        </button>
+                                        <div class="dz-dropdown-menu dropdown-menu-end absolute translate-x-[-125px] translate-y-[8px] overflow-hidden rounded-md z-[9] bg-white dark:bg-[#1b1b1b] dark:shadow-[0rem_0rem_0rem_0.0625rem_rgba(255,255,255,0.1)] shadow-[0_0_3.125rem_0_rgba(82,63,105,0.15)] min-w-[10rem] text-left py-2 hidden" id="dropdown-35">
+                                            <a class="dropdown-item py-2 px-5 text-body-color  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Edit</a>
+                                            <a class="dropdown-item py-2 px-5 text-body-color  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-panel flex items-center relative rounded-md py-[0.8rem] px-3 mx-[-5px] duration-500 hover:bg-[#0d99ff0d]">
+                                    <div class="media flex items-center justify-center w-[2.4rem] h-[2.4rem] bg-[#eee] rounded-full  text-center overflow-hidden font-semibold self-start mr-2 media-success">
+                                        <img alt="image" width="50" src="assets/images/avatar/3.jpg">
+                                    </div>
+                                    <div class="media-body flex-1">
+                                        <h5 class="mb-1 leading-6">Reminder : Treatment Time!</h5>
+                                        <small class="text-xs block mb-[0.3125rem] opacity-80 text-body-color">29 July 2020 - 02:26 PM</small>
+                                    </div>
+                                    <div class="dropdown self-end mt-[0.3125rem]">
+                                        <button type="button" class="btn btn-success w-[2.4rem] h-[2.4rem] p-[0.4375rem] bg-success-light text-success rounded-md flex justify-center items-center dz-dropdown duration-500 hover:bg-success light sharp" data-dz-dropdown="dropdown-36">
+                                            <svg width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
+                                        </button>
+                                        <div class="dz-dropdown-menu dropdown-menu-end absolute translate-x-[-125px] translate-y-[8px] overflow-hidden rounded-md z-[9] bg-white dark:bg-[#1b1b1b] dark:shadow-[0rem_0rem_0rem_0.0625rem_rgba(255,255,255,0.1)] shadow-[0_0_3.125rem_0_rgba(82,63,105,0.15)] min-w-[10rem] text-left py-2 hidden" id="dropdown-36">
+                                            <a class="dropdown-item py-2 px-5 text-body-color  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Edit</a>
+                                            <a class="dropdown-item py-2 px-5 text-body-color  text-left block w-full whitespace-nowrap hover:bg-[#f8f9fa] hover:text-primary dark:hover:bg-[#151C2C]" href="javascript:void(0);">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="chart_widget_10" width="711" height="225" style="display: block; box-sizing: border-box; height: 150px; width: 474px;"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="xl:w-1/2 col-xxl-8 w-full">
+            <div class="row">
+                <div class="w-full">
+                    <div class="card overflow-hidden">
+                        <div class="row no-gutters">
+                            <div class="w-5/12 p-0">
+                                <div class="p-[1.875rem] max-sm:p-4">
+                                    <h6 class="mb-2 font-normal uppercase">Weekly sales</h6>
+                                    <h4 class="mb-2 sm:text-lg text-base">$ 14000</h4>
+                                    <div>
+                                        <span class="inline-block font-medium leading-[1.5] rounded text-xs py-[5px] px-3 border border-transparent text-black bg-d-light-2">60%</span>
+                                        <span class="text-body-color dark:text-white text-sm">Higher</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-7/12 p-0">
+                                <div class="chart-wrapper">
+                                    <canvas id="chart_widget_11" width="436" height="354" style="display: block; box-sizing: border-box; height: 236px; width: 291px;"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sm:w-1/2">
+                    <div class="card">
+                        <div class="p-[1.875rem] max-sm:p-4">
+                            <h5 class="mb-2">570</h5>
+                            <p class="mb-4">All Sales</p>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="chart_widget_14" height="300" style="display: block; box-sizing: border-box; height: 200px; width: 224px;" width="336"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="sm:w-1/2">
+                    <div class="card">
+                        <div class="p-[1.875rem] max-sm:p-4">
+                            <h5 class="mb-2">570</h5>
+                            <p class="mb-4">All Sales</p>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="chart_widget_15" height="300" style="display: block; box-sizing: border-box; height: 200px; width: 224px;" width="336"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xl:w-1/2 col-xxl-4 w-full">
+            <div class="card">
+                <div class="chart-wrapper">
+                    <canvas id="chart_widget_16" height="517" style="display: block; box-sizing: border-box; height: 345px; width: 474px;" width="711"></canvas>
+                </div>
+                <div class="p-[1.875rem] max-sm:p-4">
+                    <h4 class="card-title text-base mb-2 capitalize">Sales Status</h4>
+                    <div class="row">
+                        <div class="w-full">
+                            <div class="flex justify-between">
+                                <h6 class="mb-2">67%</h6>
+                                <span class="text-body-color dark:text-white text-sm">Grow</span>
+                            </div>
+                            <div class="h-[5px] overflow-hidden bg-[#f6f6f6] dark:bg-[#1b1b1b] rounded-md flex">
+                                <div class="progress-bar bg-primary" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="w-full mt-6">
+                            <div class="flex justify-between">
+                                <h6 class="mb-2">67%</h6>
+                                <span class="text-body-color dark:text-white text-sm">Grow</span>
+                            </div>
+                            <div class="h-[5px] overflow-hidden bg-[#f6f6f6] dark:bg-[#1b1b1b] rounded-md flex">
+                                <div class="progress-bar bg-success" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="w-full mt-6">
+                            <div class="flex justify-between">
+                                <h6 class="mb-2">67%</h6>
+                                <span class="text-body-color dark:text-white text-sm">Grow</span>
+                            </div>
+                            <div class="h-[5px] overflow-hidden bg-[#f6f6f6] dark:bg-[#1b1b1b] rounded-md flex">
+                                <div class="progress-bar bg-info" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <div class="w-full mt-6">
+                            <div class="flex justify-between">
+                                <h6 class="mb-2">67%</h6>
+                                <span class="text-body-color dark:text-white text-sm">Grow</span>
+                            </div>
+                            <div class="h-[5px] overflow-hidden bg-[#f6f6f6] dark:bg-[#1b1b1b] rounded-md flex">
+                                <div class="progress-bar bg-warning" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xl:w-1/4  sm:w-1/2">
+            <div class="card overflow-hidden">
+                <div class="p-5 text-white text-center bg-facebook">
+                    <span class="text-2xl relative px-2.5"><i class="fab fa-facebook-f"></i></span>
+                </div>
+                <div class="row">
+                    <div class="w-1/2 border-r border-b-color">
+                        <div class="pt-4 pb-4 text-center">
+                            <h4 class="m-1"><span class="counter">89</span> k</h4>
+                            <p class="m-0">Friends</p>
+                        </div>
+                    </div>
+                    <div class="w-1/2">
+                        <div class="pt-4 pb-4 text-center">
+                            <h4 class="m-1"><span class="counter">119</span> k</h4>
+                            <p class="m-0">Followers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xl:w-1/4  sm:w-1/2">
+            <div class="card overflow-hidden">
+                <div class="p-5 text-white text-center bg-linkedin">
+                    <span class="text-2xl relative px-2.5"><i class="fab fa-linkedin-in"></i></span>
+                </div>
+                <div class="row">
+                    <div class="w-1/2 border-r border-b-color">
+                        <div class="pt-4 pb-4 text-center">
+                            <h4 class="m-1"><span class="counter">89</span> k</h4>
+                            <p class="m-0">Friends</p>
+                        </div>
+                    </div>
+                    <div class="w-1/2">
+                        <div class="pt-4 pb-4 text-center">
+                            <h4 class="m-1"><span class="counter">119</span> k</h4>
+                            <p class="m-0">Followers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xl:w-1/4  sm:w-1/2">
+            <div class="card overflow-hidden">
+                <div class="p-5 text-white text-center bg-google-plus">
+                    <span class="text-2xl relative px-2.5"><i class="fab fa-google-plus-g"></i></span>
+                </div>
+                <div class="row">
+                    <div class="w-1/2 border-r border-b-color">
+                        <div class="pt-4 pb-4 text-center">
+                            <h4 class="m-1"><span class="counter">89</span> k</h4>
+                            <p class="m-0">Friends</p>
+                        </div>
+                    </div>
+                    <div class="w-1/2">
+                        <div class="pt-4 pb-4 text-center">
+                            <h4 class="m-1"><span class="counter">119</span> k</h4>
+                            <p class="m-0">Followers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xl:w-1/4  sm:w-1/2">
+            <div class="card overflow-hidden">
+                <div class="p-5 text-white text-center bg-twitter">
+                    <span class="text-2xl relative px-2.5"><i class="fab fa-twitter"></i></span>
+                </div>
+                <div class="row">
+                    <div class="w-1/2 border-r border-b-color">
+                        <div class="pt-4 pb-4 text-center">
+                            <h4 class="m-1"><span class="counter">89</span> k</h4>
+                            <p class="m-0">Friends</p>
+                        </div>
+                    </div>
+                    <div class="w-1/2">
+                        <div class="pt-4 pb-4 text-center">
+                            <h4 class="m-1"><span class="counter">119</span> k</h4>
+                            <p class="m-0">Followers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+        </div>
+
+
+    </div>
+
+</div>
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+
+    </script>
+}

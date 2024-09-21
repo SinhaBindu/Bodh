@@ -38,11 +38,21 @@
     <!-- STYLE CSS -->
     <link href="~/Content/assets/css/style.css" rel="stylesheet">
 
+    <link href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+    <link href="https://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type='text/css' />
+
     <style>
         .sidebar-right-trigger {
             display: none !important;
         }
     </style>
+
+    <base href="@Bodh.Models.CommonModel.GetBaseUrl()" />
 </head>
 
 <body class="selection:text-white selection:bg-primary">
@@ -67,20 +77,115 @@
 
         @Html.Partial("_FooterDashboard")
     </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
     <!-- Required vendors -->
+    @*<script src="https://code.jquery.com/jquery-3.7.1.js"></script>*@
+    @*<script src="https://cdn.datatables.net/2.1.6/js/dataTables.js"></script>*@
+
     <script src="~/Content/assets/vendor/global/global.min.js"></script>
     <script src="~/Content/assets/vendor/chart.js/chart.bundle.min.js"></script>
     <script src="~/Content/assets/vendor/apexchart/apexchart.js"></script>
     <script src="~/Content/assets/vendor/peity/jquery.peity.min.js"></script>
 
     <!-- Dashboard 1 -->
-    <script src="~/Content/assets/js/dashboard/dashboard-1.js"></script>
-
+    @*<script src="~/Content/assets/js/dashboard/dashboard-1.js"></script>*@
+    <script src="~/Content/assets/vendor/moment/moment.min.js"></script>
     <script src="~/Content/assets/vendor/niceselect/js/jquery.nice-select.min.js"></script>
     <script src="~/Content/assets/vendor/powerful-calendar/calendar.min.js"></script>
     <script src="~/Content/assets/js/custom.js"></script>
     <script src="~/Content/assets/js/deznav-init.js"></script>
     <script src="~/Content/assets/js/demo.js"></script>
     <script src="~/Content/assets/js/styleSwitcher.js"></script>
+
+
+    <script src="~/Content/assets/vendor/datatables/js/jquery.dataTables.min.js"></script>-->
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    @if (TempData["ToastMsg"] != null)
+    {
+        <script>
+          var success = @((TempData["ToastMsg"] != null).ToString().ToLower());
+          if (success == true) {
+              var jsonToast = JSON.parse(decodeHtml('@TempData["ToastMsg"]'));
+              CreateToasterMessage(jsonToast.MsgTitle, jsonToast.MsgBody, jsonToast.MsgType);
+          }
+          $(function () {
+              $("#tooltip").text($(this).attr('alt'));
+
+
+          });
+
+        </script>
+    }
+    <script>
+        function ImageUploadSize(elemtid, ele) {
+            //Image Type Validation
+            var fileName = document.getElementById(elemtid).value;
+            var idxDot = fileName.lastIndexOf(".") + 1;
+            var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+            if (extFile == "jpg" || extFile == "jpeg" || extFile == "png") {
+                //TO DO
+            } else {
+                toastr.error("Error", 'Only jpg/jpeg and png files are allowed!');
+                this.value = ''; // Clear the file input
+                return false;
+            }
+            // Size Validation
+
+            var file = ele.files[0]; // Get the file object
+            // var maxSize = 2 * 1024 * 1024; // 2MB size limit (in bytes)
+            var maxSize1 = 50 * 1024; // 50kb size limit (in bytes)
+
+            // Check if a file is selected
+            if (file) {
+                // Check file size
+                if (file.size > maxSize1) {
+                    toastr.error("Error", 'File is too large! Please upload a Image less than 50kb.');
+                    $('#' + elemtid).val(''); // Clear the file input
+                    return false;
+                }
+                //else {
+                //    toastr.error("Error", 'File is ready to upload.');
+
+                //}
+            }
+        }
+        function FileUploadSize(elemtid, ele) {
+            var file = ele.files[0]; // Get the file object
+            var maxSize = 2 * 1024 * 1024; // 50KB size limit
+            var allowedExtensions = /(\.doc|\.docx|\.pdf|\.xls|\.xlsx)$/i; // Allowed file types
+
+            if (file) {
+                var fileName = file.name; // Get the file name
+
+                // Check file size
+                if (file.size > maxSize) {
+                    toastr.error("Error", 'File is too large! Please upload a file less than 2MB.');
+                    $('#' + elemtid).val(''); // Clear the file input
+                    return false;
+                }
+                // Check file type
+                else if (!allowedExtensions.exec(fileName)) {
+                    toastr.error("Error", 'Invalid file type! Only Word, PDF, and Excel files are allowed.');
+                    $('#' + elemtid).val(''); // Clear the file input
+                    return false;
+                }
+            }
+        }
+    </script>
 </body>
 </html>
