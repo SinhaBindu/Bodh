@@ -764,6 +764,15 @@ namespace Bodh.Models
         //}
         #endregion
 
+        public static List<SelectListItem> GetCategory()
+        {
+            List<SelectListItem> list = new List<SelectListItem>();
+            list.Add(new SelectListItem { Value = "0", Text = "Select" });
+            list.Add(new SelectListItem { Value = "1", Text = "Bodh Credential" });
+            list.Add(new SelectListItem { Value = "2", Text = "Studies and Papers" });
+            return list.OrderBy(x => Convert.ToInt16(x.Value)).ToList();
+        }
+
         //public static List<SelectListItem> GetModularMaster1112(bool isAddedSelect = true)
         //{
         //    List<SelectListItem> listItems = new List<SelectListItem>();

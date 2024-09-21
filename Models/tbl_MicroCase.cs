@@ -23,7 +23,8 @@ namespace Bodh.Models
         public string PhotoPath { get; set; }
         public string BannerPath { get; set; }
         public string DocumentPath { get; set; }
-        public string Writer { get; set; }
+        public string Comment { get; set; }
+        public string Writerby { get; set; }
         public string URLLink { get; set; }
         public Nullable<bool> IsActive { get; set; }
         public string CreatedBy { get; set; }

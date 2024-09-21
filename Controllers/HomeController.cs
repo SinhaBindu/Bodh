@@ -6,7 +6,7 @@ using System.Linq;
 using System.Security;
 using System.Web;
 using System.Web.Mvc;
-using static Bodh.Manager.Enums;
+using static Bodh.Models.Enums;
 
 namespace Bodh.Controllers
 {
@@ -119,7 +119,7 @@ namespace Bodh.Controllers
             {
                 if (!ModelState.IsValid)
                 {
-                    response = new JsonResponseData { StatusType = eAlertType.success.ToString(), Message = "All fields required !!", Data = null };
+                    response = new JsonResponseData { StatusType = eAlertType.error.ToString(), Message = "All fields required !!", Data = null };
                     var resResponse1 = Json(response, JsonRequestBehavior.AllowGet);
                     resResponse1.MaxJsonLength = int.MaxValue;
                     return resResponse1;

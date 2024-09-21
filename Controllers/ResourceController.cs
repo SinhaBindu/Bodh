@@ -32,6 +32,11 @@ namespace Bodh.Controllers
             Bodh_DBEntities _db = new Bodh_DBEntities();
             try
             {
+                if (string.IsNullOrWhiteSpace(model.DocumentType) || model.DocumentType=="0")
+                {
+                    Warning("Please Document Type fields.", true);
+                    return View(model);
+                }
                 if (ModelState.IsValid)
                 {
                     var count= _db.Tbl_FileResource.ToList().Count; 
@@ -42,11 +47,13 @@ namespace Bodh.Controllers
                     tbl.FileGuid = Guid.NewGuid().ToString();
                     tbl.DocumentType = model.DocumentType;
                     tbl.Subject = model.Subject;
-                    tbl.Description = model.Description;
+                    //tbl.Description = model.Description;
                     tbl.LetterNo = model.LetterNo;
                     tbl.DateofIssue = model.DateofIssue;
                     tbl.IsActive = true;
                     tbl.CreatedOn = DateTime.Now;
+                    tbl.Description = !string.IsNullOrEmpty(model.Description) ? model.Description.Trim() : null;
+                    tbl.Writerby = !string.IsNullOrEmpty(model.Writerby) ? model.Writerby.Trim() : null;
                     if (model.file!=null)
                     {
                         tbl.FileName = model.file.FileName;

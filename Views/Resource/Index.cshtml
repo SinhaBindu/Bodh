@@ -25,11 +25,12 @@
                                         <tr>
                                             <th>Sl.No.</th>
                                             <th>Date of Issue</th>
-                                            @*<th>Document Type</th>*@
+                                            <th>Category</th>
                                             <th>Subject</th>
                                             @*<th>Image Download </th>*@
                                             <th>File Download </th>
                                             <th>Description</th>
+                                            <th>Writer By</th>
 
                                         </tr>
                                     </thead>
@@ -37,23 +38,28 @@
                                         @{
                                             if (Model.Count() > 0)
                                             {
-                                                foreach (var obj in Model.OrderByDescending(x=>x.DateofIssue).ToList())
+                                                foreach (var obj in Model.OrderByDescending(x => x.DateofIssue).ToList())
                                                 {
                                                     <tr>
                                                         <td data-title="Sl.No." class="text-center">@(i++)</td>
                                                         <td data-title="Request Date" class="text-center">@Convert.ToDateTime(obj.DateofIssue).ToString("dd-MMM-yyyy")</td>
-                                                        @*<td data-title="Document Type" class="text-center">@(UmangMicro.Manager.CommonModel.GetDocumentType(false).Where(x=>x.Value==obj.DocumentType)?.FirstOrDefault().Text)</td>*@
+                                                        <td data-title="Category" class="text-center">
+                                                            @if (obj.DocumentType != null)
+                                                            {
+                                                                <strong>@(Bodh.Models.CommonModel.GetCategory().Where(x=>x.Value==obj.DocumentType)?.FirstOrDefault().Text)</strong>
+                                                            }
+                                                        </td>
                                                         <td data-title="Subject" style="text-wrap: wrap;">@obj.Subject</td>
                                                         @*<td data-title="File Download" class="text-center">
-                                                            @if (obj.AttachmentImage != null)
-                                                            {
-                                                                <a href="..@obj.AttachmentImage" target="_blank" onclick="setSelectedTestPlan(@obj.FileId_pk);"> <span class="badge bg-red"><i class="fa fa-download"></i></span></a>
-                                                            }
-                                                            else
-                                                            {
-                                                                <code>No File</code>
-                                                            }
-                                                        </td>*@
+                                                                @if (obj.AttachmentImage != null)
+                                                                {
+                                                                    <a href="..@obj.AttachmentImage" target="_blank" onclick="setSelectedTestPlan(@obj.FileId_pk);"> <span class="badge bg-red"><i class="fa fa-download"></i></span></a>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <code>No File</code>
+                                                                }
+                                                            </td>*@
                                                         <td data-title="File Download" class="text-center">
                                                             @if (obj.AttachmentFile != null)
                                                             {
@@ -65,6 +71,7 @@
                                                             }
                                                         </td>
                                                         <td data-title="Description" style="text-wrap: wrap;">@obj.Description</td>
+                                                        <td data-title="Writer By" style="text-wrap: wrap;">@obj.Writerby</td>
                                                     </tr>
                                                 }
                                             }
@@ -84,6 +91,19 @@
     </div>
 
 </div>
-        </div>
-    </div>
-</div>
+
+@section Scripts
+    {
+
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(function () {
+
+            $("#ListDataTable").DataTable({
+                // paging: false,
+                //"bFilter": false,
+                //"info": false
+            });
+        })
+    </script>
+}

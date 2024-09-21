@@ -37,6 +37,7 @@ namespace Bodh.Models
         public HttpPostedFile Banner { get; set; }
         public string BannerPath { get; set; }
         [Display(Name = "Document")]
+      
         public string Document { get; set; }
         public string DocumentPath { get; set; }
         public Nullable<bool> IsActive { get; set; }
@@ -49,7 +50,11 @@ namespace Bodh.Models
         public string URLLink { get; set; }
         [Required]
         [Display(Name = "Comment")]
-        public string Writer { get; set; }
+        [StringLength(1200, MinimumLength = 3, ErrorMessage = "* Part numbers must be between 3 and 120 character in length.")]
+        public string Comment { get; set; }
+        //[Required]
+        [Display(Name = "Writer By")]
+        public string Writerby { get; set; }
     }
 
     public class CaseDetView

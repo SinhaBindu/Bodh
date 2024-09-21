@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="c564023dc9374071a66f7107b2735448" Name="Diagram1">
-        <EntityTypeShape EntityType="Bodh_DBModel.Tbl_FileResource" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="Bodh_DBModel.tbl_Inquiry" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="Bodh_DBModel.tbl_MicroCase" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Bodh_DBModel.tbl_Inquiry" Width="1.5" PointX="4" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="Bodh_DBModel.Tbl_FileResource" Width="1.5" PointX="0.625" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="Bodh_DBModel.tbl_MicroCase" Width="1.5" PointX="2.375" PointY="0.5" IsExpanded="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -18,6 +18,7 @@ namespace Bodh.Models
         [DisplayName("Name")]
         public string Name { get; set; }
         [Required]
+        [EmailAddress]
         [DisplayName("EmailID")]
         public string EmailId { get; set; }
         [Required]

@@ -22,6 +22,7 @@
                         <th>Title</th>
                         <th>Image</th>
                         <th>Comment</th>
+                        <th>Writer By</th>
                         <th>Modify</th>
                     </tr>
                 </thead>
@@ -41,23 +42,25 @@
                                 //Server.HtmlEncode(TestString, writer);
                                 // String EncodedString = writer.ToString();
                                 var PPath = Bodh.Models.CommonModel.GetFileUrl(item.PhotoPath);
-                                <tr>
-                                    <td class="text-center">@(sno++)</td>
-                                    <td class="text-center">@dtdate</td>
-                                    <td class="text-left" style="text-wrap: wrap;">@item.Title</td>
-                                    <td class="text-center">
-                                        @if (!string.IsNullOrWhiteSpace(PPath))
-                                        {
-                                            <a href="@PPath" target="_blank"><strong><i class="fa fa-download"></i></strong></a>
-                                        }
-                                    </td>
-                                    <td class="text-left" style="text-wrap: wrap; word-spacing: normal">@item.Writer</td>
-                                    <td title="Edit">
-                                        <a href="~/Admin/MicroCase?id=@item.ID" style='font-size: medium;' class="btn btn-info">Edit <i class="fa fa-edit"></i></a>
-                                    </td>
-                                    @*<td class="text-left" style="text-wrap:wrap;">@EncodedString</td>*@
-                                    @*<td class="text-left">@EncodedString</td>*@
-                                </tr>
+                                        <tr>
+                                            <td class="text-center">@(sno++)</td>
+                                            <td class="text-center">@dtdate</td>
+                                            <td class="text-left" style="text-wrap: wrap;">@item.Title</td>
+                                            <td class="text-center">
+                                                @if (!string.IsNullOrWhiteSpace(PPath))
+                                                {
+                                                    <a href="@PPath" target="_blank"><strong><i class="fa fa-download"></i></strong></a>
+                                                }
+                                            </td>
+                                            <td class="text-left" style="text-wrap: wrap; word-spacing: normal">@item.Comment</td>
+                                            <td class="text-left" style="text-wrap: wrap;">@item.Writerby</td>
+                                            <td title="Edit">
+                                                <a href="~/Admin/MicroCase?id=@item.ID" style='font-size: medium;' class="btn btn-info">Edit <i class="fa fa-edit"></i></a>
+                                            </td>
+
+                                            @*<td class="text-left" style="text-wrap:wrap;">@EncodedString</td>*@
+                                            @*<td class="text-left">@EncodedString</td>*@
+                                        </tr>
                             }
                         }
                         else

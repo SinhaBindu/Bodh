@@ -25,8 +25,8 @@ namespace Bodh.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Tbl_FileResource> Tbl_FileResource { get; set; }
         public virtual DbSet<tbl_Inquiry> tbl_Inquiry { get; set; }
+        public virtual DbSet<Tbl_FileResource> Tbl_FileResource { get; set; }
         public virtual DbSet<tbl_MicroCase> tbl_MicroCase { get; set; }
     }
 }

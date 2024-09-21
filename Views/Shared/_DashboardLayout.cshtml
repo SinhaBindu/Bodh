@@ -154,7 +154,7 @@
             if (file) {
                 // Check file size
                 if (file.size > maxSize1) {
-                    toastr.error("Error", 'File is too large! Please upload a Image less than 50kb.');
+                    toastr.error("Error", 'File is too large! Please upload a Image less than 150kb.');
                     $('#' + elemtid).val(''); // Clear the file input
                     return false;
                 }
@@ -166,7 +166,7 @@
         }
         function FileUploadSize(elemtid, ele) {
             var file = ele.files[0]; // Get the file object
-            var maxSize = 2 * 1024 * 1024; // 50KB size limit
+            var maxSize = 5 * 1024 * 1024; // 50KB size limit
             var allowedExtensions = /(\.doc|\.docx|\.pdf|\.xls|\.xlsx)$/i; // Allowed file types
 
             if (file) {

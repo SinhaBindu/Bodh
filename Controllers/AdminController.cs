@@ -7,10 +7,10 @@ using System.Web;
 using System.Web.Mvc;
 using Bodh.Models;
 using Microsoft.Ajax.Utilities;
-using static Bodh.Manager.Enums;
+using static Bodh.Models.Enums;
 
 
-namespace Bodh.Views.Account
+namespace Bodh.Controllers
 {
     [Authorize]
     public class AdminController : Controller
@@ -82,7 +82,8 @@ namespace Bodh.Views.Account
                     model.PhotoPath = tbl.PhotoPath;
                     model.BannerPath = tbl.BannerPath;
                     model.URLLink = tbl.URLLink;
-                    model.Writer = tbl.Writer;
+                    model.Comment = tbl.Comment;
+                    model.Writerby = tbl.Writerby;
                 }
             }
             return View(model);
@@ -103,7 +104,8 @@ namespace Bodh.Views.Account
                     tbl.Category = !(string.IsNullOrWhiteSpace(model.Category)) ? model.Category.Trim() : null;
                     tbl.HtmlEditor = !string.IsNullOrEmpty(model.HtmlEditor) ? model.HtmlEditor.Trim() : null;
                     tbl.URLLink = !string.IsNullOrEmpty(model.URLLink) ? model.URLLink.Trim() : null;
-                    tbl.Writer = !string.IsNullOrEmpty(model.Writer) ? model.Writer.Trim() : null;
+                    tbl.Comment = !string.IsNullOrEmpty(model.Comment) ? model.Comment.Trim() : null;
+                    tbl.Writerby = !string.IsNullOrEmpty(model.Writerby) ? model.Writerby.Trim() : null;
                     tbl.IsActive = true;
                     if (model.ID == 0)
                     {

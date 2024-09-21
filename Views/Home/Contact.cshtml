@@ -26,13 +26,13 @@
                 <div class="input-form">
                     <div class="input-form-devide">
                         <p>Mobile Number</p>
-                        <input type="number" id="MobileNo" name="MobileNo" required placeholder="Mobile Number" maxlength="10" max="10" min="10" />
+                        <input type="number" id="MobileNo" name="MobileNo" oninput="validateLength(this)" required placeholder="Mobile Number" maxlength="10" max="10" min="10" />
                     </div>
                 </div>
                 <div class="input-form">
                     <div class="input-form-devide">
                         <p>Email Address</p>
-                        <input type="text" id="EmailId" name="EmailId" required placeholder="Email Address" maxlength="200" />
+                        <input type="text" id="EmailId" name="EmailId" onchange="return validateEmail()" required placeholder="Email Address" maxlength="200" />
                     </div>
                 </div>
                 <div class="input-form">
@@ -82,20 +82,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-
-
 <script>
-        $(function () {
+    $(function () {
 
             /* Started Submitted Tab */
             $("#formid").on("submit", function (event) {
                 event.preventDefault();
                 debugger;
+                validateEmail();
                 var isvalid = false;
                 //    $("#formid").valid();
                 //var formData = $(this).serialize();
                 const formData = new FormData();
                 formData.append('Id', '@Model.Id');
+
 
                 jQuery.event.trigger("ajaxStart");
                 if ($('#Name').val() != '') {
@@ -113,6 +113,10 @@
                 if ($('#Comment').val() != '') {
                     formData.append('Comment', $('#Comment').val());
                     isvalid = true;
+                }
+                if ($('#Name').val() == '' || $('#EmailId').val() == '' || $('#MobileNo').val() == '' || $('#Comment').val() == '') {
+                    //toastr.error("Error", "All fields required !!");
+                    isvalid = false;
                 }
                 if (isvalid) {
                     $.ajax({
@@ -142,7 +146,7 @@
                 }
                 else {
                     //CreateToasterMessage("Error", "All Record Validate !!", "error");
-                    toastr.error("Error", "All Record Validate !!");
+                    toastr.error("Error", "All fields required!!");
                     jQuery.event.trigger("ajaxStop");
                     return false;
                 }
@@ -157,6 +161,32 @@
             $('#EmailId').val('');
             $('#MobileNo').val('');
             $('#Comment').val('');
+    }
+    function validateLength(input) {
+        var maxLength = 10;
+
+        // Check if the value exceeds 10 digits
+        if (input.value.length > maxLength) {
+            input.value = input.value.slice(0, maxLength); // Truncate to 10 digits
+            toastr.error("Error", "Only 10 digits are allowed.");
+            //$('#MobileNo').val('');
+            return false;
         }
+    }
+    function validateEmail() {
+        var email = document.getElementById("EmailId").value;
+
+        // Regular expression to validate email format
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (emailPattern.test(email)) {
+            return true; // Return true to submit the form
+        } else {
+            toastr.error("Error", "Invalid email address.");
+            document.getElementById("EmailId").value = "";
+            return false; // Prevent form submission
+        }
+    }
+
 
 </script>

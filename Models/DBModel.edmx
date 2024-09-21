@@ -20,6 +20,7 @@
           <Property Name="DateofIssue" Type="datetime" />
           <Property Name="Subject" Type="nvarchar(max)" />
           <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Writerby" Type="nvarchar" MaxLength="200" />
           <Property Name="IsActive" Type="bit" />
           <Property Name="CreatedBy" Type="nvarchar" MaxLength="200" />
           <Property Name="CreatedOn" Type="datetime" />
@@ -52,7 +53,8 @@
           <Property Name="PhotoPath" Type="nvarchar(max)" />
           <Property Name="BannerPath" Type="nvarchar(max)" />
           <Property Name="DocumentPath" Type="nvarchar(max)" />
-          <Property Name="Writer" Type="nvarchar" MaxLength="200" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="Writerby" Type="nvarchar" MaxLength="200" />
           <Property Name="URLLink" Type="nvarchar(max)" />
           <Property Name="IsActive" Type="bit" />
           <Property Name="CreatedBy" Type="nvarchar" MaxLength="200" />
@@ -70,10 +72,23 @@
     <edmx:ConceptualModels>
       <Schema Namespace="Bodh_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="Bodh_DBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Tbl_FileResource" EntityType="Bodh_DBModel.Tbl_FileResource" />
           <EntitySet Name="tbl_Inquiry" EntityType="Bodh_DBModel.tbl_Inquiry" />
+          <EntitySet Name="Tbl_FileResource" EntityType="Bodh_DBModel.Tbl_FileResource" />
           <EntitySet Name="tbl_MicroCase" EntityType="Bodh_DBModel.tbl_MicroCase" />
         </EntityContainer>
+        <EntityType Name="tbl_Inquiry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EmailId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsSentMail" Type="Boolean" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+        </EntityType>
         <EntityType Name="Tbl_FileResource">
           <Key>
             <PropertyRef Name="FileId_pk" />
@@ -89,24 +104,12 @@
           <Property Name="DateofIssue" Type="DateTime" Precision="3" />
           <Property Name="Subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Writerby" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" />
           <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="CreatedOn" Type="DateTime" Precision="3" />
           <Property Name="UpdatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="tbl_Inquiry">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="EmailId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="MobileNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" />
-          <Property Name="IsSentMail" Type="Boolean" />
-          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="tbl_MicroCase">
           <Key>
@@ -121,7 +124,8 @@
           <Property Name="PhotoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="BannerPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DocumentPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Writer" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Writerby" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="URLLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" />
           <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
@@ -135,28 +139,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Bodh_DBModelStoreContainer" CdmEntityContainer="Bodh_DBEntities">
-          <EntitySetMapping Name="Tbl_FileResource">
-            <EntityTypeMapping TypeName="Bodh_DBModel.Tbl_FileResource">
-              <MappingFragment StoreEntitySet="Tbl_FileResource">
-                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
-                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Subject" ColumnName="Subject" />
-                <ScalarProperty Name="DateofIssue" ColumnName="DateofIssue" />
-                <ScalarProperty Name="AttachmentImage" ColumnName="AttachmentImage" />
-                <ScalarProperty Name="AttachmentFile" ColumnName="AttachmentFile" />
-                <ScalarProperty Name="FileImage" ColumnName="FileImage" />
-                <ScalarProperty Name="FileName" ColumnName="FileName" />
-                <ScalarProperty Name="LetterNo" ColumnName="LetterNo" />
-                <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
-                <ScalarProperty Name="FileGuid" ColumnName="FileGuid" />
-                <ScalarProperty Name="FileId_pk" ColumnName="FileId_pk" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tbl_Inquiry">
             <EntityTypeMapping TypeName="Bodh_DBModel.tbl_Inquiry">
               <MappingFragment StoreEntitySet="tbl_Inquiry">
@@ -171,6 +153,29 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_FileResource">
+            <EntityTypeMapping TypeName="Bodh_DBModel.Tbl_FileResource">
+              <MappingFragment StoreEntitySet="Tbl_FileResource">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Writerby" ColumnName="Writerby" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="DateofIssue" ColumnName="DateofIssue" />
+                <ScalarProperty Name="AttachmentImage" ColumnName="AttachmentImage" />
+                <ScalarProperty Name="AttachmentFile" ColumnName="AttachmentFile" />
+                <ScalarProperty Name="FileImage" ColumnName="FileImage" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="LetterNo" ColumnName="LetterNo" />
+                <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+                <ScalarProperty Name="FileGuid" ColumnName="FileGuid" />
+                <ScalarProperty Name="FileId_pk" ColumnName="FileId_pk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tbl_MicroCase">
             <EntityTypeMapping TypeName="Bodh_DBModel.tbl_MicroCase">
               <MappingFragment StoreEntitySet="tbl_MicroCase">
@@ -180,7 +185,8 @@
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="URLLink" ColumnName="URLLink" />
-                <ScalarProperty Name="Writer" ColumnName="Writer" />
+                <ScalarProperty Name="Writerby" ColumnName="Writerby" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
                 <ScalarProperty Name="DocumentPath" ColumnName="DocumentPath" />
                 <ScalarProperty Name="BannerPath" ColumnName="BannerPath" />
                 <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />

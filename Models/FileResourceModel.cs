@@ -11,8 +11,8 @@ namespace Bodh.Models
     {
         public int FileId_pk { get; set; }
         public string FileGuid { get; set; }
-       // [Required]
-        [DisplayName("Document Type")]
+        [Required]
+        [DisplayName("Category")]
         public string DocumentType { get; set; }
         public string LetterNo { get; set; }
         public string FileName { get; set; }
@@ -33,10 +33,14 @@ namespace Bodh.Models
         public string Subject { get; set; }
         [Required]
         [DisplayName("Description")]
+        [StringLength(1200, MinimumLength = 3, ErrorMessage = "* Part numbers must be between 3 and 120 character in length.")]
         public string Description { get; set; }
         public Nullable<bool> IsActive { get; set; }
         public Nullable<System.DateTime> Upload_date { get; set; }
         public string UplaodBy { get; set; }
+        //[Required]
+        [DisplayName("Writer By")]
+        public string Writerby { get; set; }
     }
     public class resourcefilter
     {
