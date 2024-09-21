@@ -142,7 +142,7 @@ namespace Bodh.Controllers
                 }
                 if (result > 0)
                 {
-                    response = new JsonResponseData { StatusType = eAlertType.success.ToString(), Message = "Inquery Data Submitted " + " Successfully.....", Data = null };
+                    response = new JsonResponseData { StatusType = eAlertType.success.ToString(), Message = "Enquiry Data Submitted " + " Successfully.....", Data = null };
                     var resResponse1 = Json(response, JsonRequestBehavior.AllowGet);
                     resResponse1.MaxJsonLength = int.MaxValue;
                     return resResponse1;
