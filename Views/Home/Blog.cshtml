@@ -6,6 +6,12 @@
     .active5 {
         color: #000 !important;
     }
+
+    @@media screen and (max-width: 900px) {
+        .active5 {
+            color: #FFA968 !important;
+        }
+    }
 </style>
 
 
@@ -53,7 +59,6 @@
     </div>
     <div class="blog-list">
         <div class="blog-box">
-
             @if (bloglist != null)
             {
                 foreach (var item in bloglist.OrderByDescending(x => x.Date).ToList())

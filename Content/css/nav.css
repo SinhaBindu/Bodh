@@ -103,13 +103,14 @@ nav ul li ul li a {
     float: none;
   }
 
-  nav ul li a {
-    padding: 15px 25px;
-    line-height: 20px;
-    background: #242424;
-    color: #fff !important;
-    border-bottom: 1px solid #747474;
-  }
+    nav ul li a {
+        padding: 15px 25px;
+        line-height: 20px;
+        background: #242424;
+        background: #5B2C54;
+        color: #fff !important;
+        border-bottom: 1px solid #747474;
+    }
 
   nav ul li ul li a {
     padding-left: 30px;
@@ -141,19 +142,19 @@ nav ul li ul li a {
   padding: 10px 35px 16px 0px;
 }
 
-#navbar-toggle span,
-#navbar-toggle span:before,
-#navbar-toggle span:after {
-  cursor: pointer;
-  border-radius: 1px;
-  height: 3px;
-  width: 30px;
-  background: #47261E;
-  position: absolute;
-  display: block;
-  content: '';
-  transition: all 300ms ease-in-out;
-}
+    #navbar-toggle span,
+    #navbar-toggle span:before,
+    #navbar-toggle span:after {
+        cursor: pointer;
+        border-radius: 1px;
+        height: 3px;
+        width: 30px;
+        background: #5B2C54;
+        position: absolute;
+        display: block;
+        content: '';
+        transition: all 300ms ease-in-out;
+    }
 
 #navbar-toggle span:before {
   top: -10px;
@@ -179,15 +180,3 @@ nav ul li ul li a {
 #navbar-toggle.active span:after {
   transform: rotate(-45deg);
 }
-
-/* 
-@media all and (max-width: 768px) {
-  nav {
-    width: 100%;
-    padding: 35px 0 10px;
-  }
-
-  #navbar-toggle {
-    top: 29px;
-  }
-} */
