@@ -29,7 +29,7 @@
                         <img src="@(PPath)" alt="" />
                     </div>
                     <div class="blog-content">
-                        <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="clock-svg"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z" /></svg>@bloglistlast.Writerby</h3>
+                        @*<h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="clock-svg"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z" /></svg>@bloglistlast.Writerby</h3>*@
                         <h2><a href="@bloglistlast.URLLink" target="_blank">@bloglistlast.Title</a></h2>
                         <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="clock-svg"><path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" /></svg> @(dtdate)</p>
                         
@@ -67,7 +67,7 @@
                     string dtdate = Bodh.Models.CommonModel.FormateDtDMY(item.Date.Value.ToString());
                     <div class="blogs">
                         <div class="brick"> <a href="@item.URLLink" target="_blank"> <img src="@PPath" alt="" /> </a> </div>
-                        <h3>@item.Writerby <span>@dtdate</span></h3>
+                        <h3><span>@dtdate</span></h3>
                         <h2><a href="@item.URLLink" target="_blank">@item.Title</a></h2>
                         <p>@item.Comment</p>
                     </div>

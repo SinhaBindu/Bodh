@@ -883,12 +883,12 @@ header,
         margin-top: 12px;
         font-weight: 400;
         color: #A1A1A1;
-        font-size: 16px;
+        font-size: 14px;
     }
 
-        .blogs h3 span {
+        /*.blogs h3 span {
             float: right;
-        }
+        }*/
 
 .blog-list h4 {
     text-align: center;
