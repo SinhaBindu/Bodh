@@ -1,26 +1,15 @@
-﻿using Bodh.Models;
-using Microsoft.AspNet.Identity;
-using Newtonsoft.Json;
-using SubSonic.Schema;
+﻿using SubSonic.Schema;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
-using System.Data.Entity;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net.Mail;
-using System.Text;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.UI.WebControls.WebParts;
-using System.Xml;
-using System.Reflection;
-using System.Web.Helpers;
-using System.Collections;
 
 namespace Bodh.Models
 {
@@ -771,6 +760,53 @@ namespace Bodh.Models
             list.Add(new SelectListItem { Value = "1", Text = "Bodh Credential" });
             list.Add(new SelectListItem { Value = "2", Text = "Studies and Papers" });
             return list.OrderBy(x => Convert.ToInt16(x.Value)).ToList();
+        }
+
+        public static int SendMailForUser(ContactModel model)
+        {
+            Bodh_DBEntities _db = new Bodh_DBEntities();
+            string To = "abhanot@pciadvisory.com", Subject = "BODH Inquiry";
+            string OtherEmailID = "";
+            string bodydata = string.Empty;
+            string bodyTemplate = string.Empty;
+            Guid AssessmentScheduleId_pk = Guid.Empty;
+            Guid ParticipantId = Guid.Empty;
+            using (StreamReader reader = new StreamReader(HttpContext.Current.Server.MapPath("~/Views/Shared/MailTemplate.html")))
+            {
+                bodyTemplate = reader.ReadToEnd();
+            }
+            try
+            {
+                bodydata = bodyTemplate.Replace("{Dearusername}", "Bodh Inquiry")
+                    .Replace("{bodytext}", model.Comment)
+                    .Replace("{Name}", model.Name)
+                    .Replace("{MobileNo}", model.MobileNo)
+                    .Replace("{EmailID}", model.EmailId);
+                MailMessage mail = new MailMessage();
+                //mail.To.Add("bindu@careindia.org");
+                OtherEmailID = !string.IsNullOrWhiteSpace(OtherEmailID) ? "," + OtherEmailID : null;
+                mail.To.Add(To + OtherEmailID);
+                mail.From = new MailAddress("bodh.pci@gmail.com", "BODH Inquiry");
+                mail.Subject = Subject;// + " ( " + SenderName + " )";
+
+                //bodydata = bodyTemplate.Replace("{bodytext}", Body);
+                mail.Body = bodydata;
+                mail.IsBodyHtml = true;
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 587;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new System.Net.NetworkCredential("bodh.pci@gmail.com", "nhsizqldyzssklpv");// yklz eazk tmkn vcbu//Pasw-Care@321 // Enter seders User name and password       
+                smtp.EnableSsl = true;
+                smtp.Send(mail);
+                return 1;
+
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;    
+                return 0;
+            }
         }
 
         //public static List<SelectListItem> GetModularMaster1112(bool isAddedSelect = true)

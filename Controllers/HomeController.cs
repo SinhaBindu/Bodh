@@ -142,7 +142,8 @@ namespace Bodh.Controllers
                 }
                 if (result > 0)
                 {
-                    response = new JsonResponseData { StatusType = eAlertType.success.ToString(), Message = "Enquiry Data Submitted " + " Successfully.....", Data = null };
+                    CommonModel.SendMailForUser(model);
+                    response = new JsonResponseData { StatusType = eAlertType.success.ToString(), Message = "Inquiry Data Submitted " + " Successfully.....", Data = null };
                     var resResponse1 = Json(response, JsonRequestBehavior.AllowGet);
                     resResponse1.MaxJsonLength = int.MaxValue;
                     return resResponse1;
