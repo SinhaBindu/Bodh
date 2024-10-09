@@ -463,9 +463,11 @@
     <Content Include="Content\css\style.css" />
     <Content Include="Content\images\adolescent.png" />
     <Content Include="Content\images\adult.png" />
+    <Content Include="Content\images\andy.png" />
     <Content Include="Content\images\arrow.png" />
     <Content Include="Content\images\arrows-32-32-3.png" />
     <Content Include="Content\images\banner-image.png" />
+    <Content Include="Content\images\bindu.jpg" />
     <Content Include="Content\images\blog1.png" />
     <Content Include="Content\images\blog2.png" />
     <Content Include="Content\images\blog3.png" />
@@ -478,6 +480,7 @@
     <Content Include="Content\images\blog\The-Importance-of-Mental-Health.jpg" />
     <Content Include="Content\images\blog\World-Mental-Health-Day-Theme-Purpose-and-Its-Importance.jpg" />
     <Content Include="Content\images\bodh-logo.png" />
+    <Content Include="Content\images\brijesh.jpg" />
     <Content Include="Content\images\child.png" />
     <Content Include="Content\images\client\amazon.png" />
     <Content Include="Content\images\client\amdocs 1.png" />
@@ -518,6 +521,7 @@
     <Content Include="Content\images\jtsp\sehat-ka-tadka.png" />
     <Content Include="Content\images\location.png" />
     <Content Include="Content\images\main-logo.png" />
+    <Content Include="Content\images\manoj.jpg" />
     <Content Include="Content\images\method-bg.png" />
     <Content Include="Content\images\Middle.png" />
     <Content Include="Content\images\migrant-girl.jpg" />
@@ -530,12 +534,14 @@
     <Content Include="Content\images\react.svg" />
     <Content Include="Content\images\right.png" />
     <Content Include="Content\images\sem.png" />
+    <Content Include="Content\images\swati.jpg" />
     <Content Include="Content\images\telephone.png" />
     <Content Include="Content\images\test.png" />
     <Content Include="Content\images\work-area.png" />
     <Content Include="Content\js\amazingcarousel.js" />
     <Content Include="Content\js\aos.js" />
     <Content Include="Content\js\initcarousel-1.js" />
+    <Content Include="Content\js\jquery.expander.js" />
     <Content Include="Content\js\smartphoto.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -675,6 +681,7 @@
     <Content Include="Views\Shared\_Alerts.cshtml" />
     <Content Include="Views\Admin\InqueryList.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Home\OurTeam.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

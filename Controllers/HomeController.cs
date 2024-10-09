@@ -29,6 +29,11 @@ namespace Bodh.Controllers
             return View();
         }
 
+        public ActionResult OurTeam()
+        {
+            return View();
+        }
+
         public ActionResult OurWork()
         {
             return View();
