@@ -682,6 +682,7 @@
     <Content Include="Views\Admin\InqueryList.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Home\OurTeam.cshtml" />
+    <Content Include="Views\Home\DomainExpert.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

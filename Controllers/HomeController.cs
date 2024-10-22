@@ -24,6 +24,10 @@ namespace Bodh.Controllers
         {
             return View();
         }
+        public ActionResult domainexpert()
+        {
+            return View();
+        }
         public ActionResult BlogDetails()
         {
             return View();
