@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.EnterpriseServices.CompensatingResourceManager;
 using System.IO;
 using System.Linq;
 using System.Net.Mail;
@@ -796,7 +797,7 @@ namespace Bodh.Models
                 smtp.Host = "smtp.gmail.com";
                 smtp.Port = 587;
                 smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new System.Net.NetworkCredential("bodh.pci@gmail.com", "nhsizqldyzssklpv");// yklz eazk tmkn vcbu//Pasw-Care@321 // Enter seders User name and password       
+                smtp.Credentials = new System.Net.NetworkCredential("bodh.pci@gmail.com", "nhsizqldyzssklpv");// User : bodh.pci@gmail.com password: HCD@1998//Check key for mail// yklz eazk tmkn vcbu//Pasw-Care@321 // Enter seders User name and password       
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
                 return 1;
